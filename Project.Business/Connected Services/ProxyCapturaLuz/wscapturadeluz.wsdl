@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CapturaApertura">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codigoTienda" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoCajero" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoCaja" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fecha" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="importe" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CapturaAperturaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CapturaAperturaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CapturaCierre">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codigoTienda" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoCajero" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoCaja" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fecha" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="importeApertura" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="importeCierre" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CapturaCierreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CapturaCierreResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CapturaAperturaSoapIn">
+    <wsdl:part name="parameters" element="tns:CapturaApertura" />
+  </wsdl:message>
+  <wsdl:message name="CapturaAperturaSoapOut">
+    <wsdl:part name="parameters" element="tns:CapturaAperturaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CapturaCierreSoapIn">
+    <wsdl:part name="parameters" element="tns:CapturaCierre" />
+  </wsdl:message>
+  <wsdl:message name="CapturaCierreSoapOut">
+    <wsdl:part name="parameters" element="tns:CapturaCierreResponse" />
+  </wsdl:message>
+  <wsdl:portType name="wsCapturaDeLuzSoap">
+    <wsdl:operation name="CapturaApertura">
+      <wsdl:input message="tns:CapturaAperturaSoapIn" />
+      <wsdl:output message="tns:CapturaAperturaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CapturaCierre">
+      <wsdl:input message="tns:CapturaCierreSoapIn" />
+      <wsdl:output message="tns:CapturaCierreSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsCapturaDeLuzSoap" type="tns:wsCapturaDeLuzSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CapturaApertura">
+      <soap:operation soapAction="http://tempuri.org/CapturaApertura" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CapturaCierre">
+      <soap:operation soapAction="http://tempuri.org/CapturaCierre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsCapturaDeLuzSoap12" type="tns:wsCapturaDeLuzSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CapturaApertura">
+      <soap12:operation soapAction="http://tempuri.org/CapturaApertura" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CapturaCierre">
+      <soap12:operation soapAction="http://tempuri.org/CapturaCierre" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsCapturaDeLuz">
+    <wsdl:port name="wsCapturaDeLuzSoap" binding="tns:wsCapturaDeLuzSoap">
+      <soap:address location="http://pruebas-mm:8089/wspos/wscapturadeluz.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsCapturaDeLuzSoap12" binding="tns:wsCapturaDeLuzSoap12">
+      <soap12:address location="http://pruebas-mm:8089/wspos/wscapturadeluz.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="RegistrarCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="iCodigoClienteSistemaCredito" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iCodigoEmpleado" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iCodigoClienteWeb" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTelefono" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPaterno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMaterno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sNombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sGenero" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFechaNacimiento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFolioVenta" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iCodigoTiendaRegistra" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iCodigoCajaRegistra" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iCodigoEmpleadoRegistra" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sEmail" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistrarClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegistrarClienteResult" type="tns:RespuestaRegistrarCliente" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RespuestaRegistrarCliente">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="bError" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="sMensaje" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sNivel" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="bPrimeraCompra" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="iCodigoCliente" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConsultarCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="iCodigoCliente" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iCodigoClienteSistemaCredito" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iCodigoEmpleado" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iCodigoClienteWeb" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTelefono" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPaterno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMaterno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sNombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFechaNacimiento" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iCodigoTiendaRegistro" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sEmail" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iCodigoTienda" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iCodigoCaja" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarClienteResult" type="tns:RespuestaConsultarCliente" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RespuestaConsultarCliente">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="sMensajeError" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iCantidadClientes" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="bCantidadLimitada" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="infoClientesCRMs" type="tns:ArrayOfInfoClientesCRM" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfInfoClientesCRM">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="InfoClientesCRM" nillable="true" type="tns:InfoClientesCRM" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="InfoClientesCRM">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="iCodigoCliente" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="iCodigoClienteSistemaCredito" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="iCodigoEmpleado" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="iCodigoClienteWeb" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="sNivel" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="bPrimeraCompra" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="sTelefono" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sPaterno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sMaterno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sNombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sGenero" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sFechaNacimiento" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dSaldo" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="sFechaRegistro" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sEmail" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RegistrarClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:RegistrarCliente" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:RegistrarClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarCliente" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarClienteResponse" />
+  </wsdl:message>
+  <wsdl:portType name="wsLealtadSoap">
+    <wsdl:operation name="RegistrarCliente">
+      <wsdl:input message="tns:RegistrarClienteSoapIn" />
+      <wsdl:output message="tns:RegistrarClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCliente">
+      <wsdl:input message="tns:ConsultarClienteSoapIn" />
+      <wsdl:output message="tns:ConsultarClienteSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsLealtadSoap" type="tns:wsLealtadSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RegistrarCliente">
+      <soap:operation soapAction="http://tempuri.org/RegistrarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCliente">
+      <soap:operation soapAction="http://tempuri.org/ConsultarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsLealtadSoap12" type="tns:wsLealtadSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RegistrarCliente">
+      <soap12:operation soapAction="http://tempuri.org/RegistrarCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCliente">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsLealtad">
+    <wsdl:port name="wsLealtadSoap" binding="tns:wsLealtadSoap">
+      <soap:address location="http://172.16.50.91/WSPOS/wsLealtad.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsLealtadSoap12" binding="tns:wsLealtadSoap12">
+      <soap12:address location="http://172.16.50.91/WSPOS/wsLealtad.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

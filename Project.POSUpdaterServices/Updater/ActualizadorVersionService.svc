@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Project.POSUpdaterServices.Updater.ActualizadorVersionService" CodeBehind="ActualizadorVersionService.svc.cs" %>

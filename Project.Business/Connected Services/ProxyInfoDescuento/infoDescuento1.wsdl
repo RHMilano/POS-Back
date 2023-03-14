@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="getAutorization">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Tienda" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConsecutivoVenta" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MontoVenta" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="Caja" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Fecha" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="RazonDescuento" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="OpcionDescuento" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoDescuento" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MontoDescuento" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="Linea" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAutorizationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAutorizationResult" type="tns:WsPosResponseModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="WsPosResponseModel">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="codeNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mensaje" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getAutorizationV2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Tienda" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ConsecutivoVenta" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MontoVenta" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="Caja" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Fecha" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="RazonDescuento" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="OpcionDescuento" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoDescuento" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MontoDescuento" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="Linea" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="folioCupon" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAutorizationV2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAutorizationV2Result" type="tns:WsPosResponseModel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getAutorizationSoapIn">
+    <wsdl:part name="parameters" element="tns:getAutorization" />
+  </wsdl:message>
+  <wsdl:message name="getAutorizationSoapOut">
+    <wsdl:part name="parameters" element="tns:getAutorizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAutorizationV2SoapIn">
+    <wsdl:part name="parameters" element="tns:getAutorizationV2" />
+  </wsdl:message>
+  <wsdl:message name="getAutorizationV2SoapOut">
+    <wsdl:part name="parameters" element="tns:getAutorizationV2Response" />
+  </wsdl:message>
+  <wsdl:portType name="InfoDescuentoSoap">
+    <wsdl:operation name="getAutorization">
+      <wsdl:input message="tns:getAutorizationSoapIn" />
+      <wsdl:output message="tns:getAutorizationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAutorizationV2">
+      <wsdl:input message="tns:getAutorizationV2SoapIn" />
+      <wsdl:output message="tns:getAutorizationV2SoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="InfoDescuentoSoap" type="tns:InfoDescuentoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getAutorization">
+      <soap:operation soapAction="http://tempuri.org/getAutorization" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAutorizationV2">
+      <soap:operation soapAction="http://tempuri.org/getAutorizationV2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="InfoDescuentoSoap12" type="tns:InfoDescuentoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getAutorization">
+      <soap12:operation soapAction="http://tempuri.org/getAutorization" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAutorizationV2">
+      <soap12:operation soapAction="http://tempuri.org/getAutorizationV2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="InfoDescuento">
+    <wsdl:port name="InfoDescuentoSoap" binding="tns:InfoDescuentoSoap">
+      <soap:address location="http://posmain.milano-melody.net/WSPOS/infoDescuento.asmx" />
+    </wsdl:port>
+    <wsdl:port name="InfoDescuentoSoap12" binding="tns:InfoDescuentoSoap12">
+      <soap12:address location="http://posmain.milano-melody.net/WSPOS/infoDescuento.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

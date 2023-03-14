@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ValidaVale">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idDistribuidora" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FolioVale" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MontoVale" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidaValeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidaValeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaVale">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FolioVale" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaValeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaValeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AplicaVale">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FolioVale" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idDistribuidora" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="MontoVale" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="Quincenas" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="TipoPago" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IdCajaAplica" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="TiendaAplica" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FechaNacimiento" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="INE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Apaterno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Amaterno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Calle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NumExt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Colonia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Estado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Municipio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sexo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="puntosUtilizados" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="efectivoPuntos" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AplicaValeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AplicaValeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelaAplicaVale">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="foliovale" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FolioVenta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="motivo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="passCancelacion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CancelaAplicaValeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CancelaAplicaValeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TablaAmortizacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idDistribuidora" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="folioVale" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="montoVenta" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Apaterno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Amaterno" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FechaNacimiento" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="Calle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NumExt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Colonia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Municipio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Estado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TablaAmortizacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TablaAmortizacionResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TramaImpresion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FolioVale" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TramaImpresionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TramaImpresionResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Apaterno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Amaterno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaNacimiento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaClienteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaMovimientos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IdTienda" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FechaInicio" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="FechaFinal" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaMovimientosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaMovimientosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaMovimientosPuntosDV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FechaInicio" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="FechaFinal" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaMovimientosPuntosDVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaMovimientosPuntosDVResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ValidaValeSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidaVale" />
+  </wsdl:message>
+  <wsdl:message name="ValidaValeSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidaValeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaValeSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaVale" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaValeSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaValeResponse" />
+  </wsdl:message>
+  <wsdl:message name="AplicaValeSoapIn">
+    <wsdl:part name="parameters" element="tns:AplicaVale" />
+  </wsdl:message>
+  <wsdl:message name="AplicaValeSoapOut">
+    <wsdl:part name="parameters" element="tns:AplicaValeResponse" />
+  </wsdl:message>
+  <wsdl:message name="CancelaAplicaValeSoapIn">
+    <wsdl:part name="parameters" element="tns:CancelaAplicaVale" />
+  </wsdl:message>
+  <wsdl:message name="CancelaAplicaValeSoapOut">
+    <wsdl:part name="parameters" element="tns:CancelaAplicaValeResponse" />
+  </wsdl:message>
+  <wsdl:message name="TablaAmortizacionSoapIn">
+    <wsdl:part name="parameters" element="tns:TablaAmortizacion" />
+  </wsdl:message>
+  <wsdl:message name="TablaAmortizacionSoapOut">
+    <wsdl:part name="parameters" element="tns:TablaAmortizacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="TramaImpresionSoapIn">
+    <wsdl:part name="parameters" element="tns:TramaImpresion" />
+  </wsdl:message>
+  <wsdl:message name="TramaImpresionSoapOut">
+    <wsdl:part name="parameters" element="tns:TramaImpresionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaCliente" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaMovimientosSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaMovimientos" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaMovimientosSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaMovimientosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaMovimientosPuntosDVSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaMovimientosPuntosDV" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaMovimientosPuntosDVSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaMovimientosPuntosDVResponse" />
+  </wsdl:message>
+  <wsdl:portType name="VentasFinlagSoap">
+    <wsdl:operation name="ValidaVale">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Método que validara la autenticidad de un vale antes de aplicarse.</wsdl:documentation>
+      <wsdl:input message="tns:ValidaValeSoapIn" />
+      <wsdl:output message="tns:ValidaValeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaVale">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Método que obtendrá la información general de un vale previamente registrado. (Se retorna solo la información del último movimiento con estatus Activo)</wsdl:documentation>
+      <wsdl:input message="tns:ConsultaValeSoapIn" />
+      <wsdl:output message="tns:ConsultaValeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AplicaVale">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Método que aplicara un vale dentro de una compra.</wsdl:documentation>
+      <wsdl:input message="tns:AplicaValeSoapIn" />
+      <wsdl:output message="tns:AplicaValeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelaAplicaVale">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Método que cancelará la aplicación de un vale.</wsdl:documentation>
+      <wsdl:input message="tns:CancelaAplicaValeSoapIn" />
+      <wsdl:output message="tns:CancelaAplicaValeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TablaAmortizacion">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Método que muestra la tabla de amortizacion quincenal y forma de credito</wsdl:documentation>
+      <wsdl:input message="tns:TablaAmortizacionSoapIn" />
+      <wsdl:output message="tns:TablaAmortizacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TramaImpresion">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Método que retorna la trama de impresión del ticket o pagare.</wsdl:documentation>
+      <wsdl:input message="tns:TramaImpresionSoapIn" />
+      <wsdl:output message="tns:TramaImpresionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaCliente">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Método para obtener la información de un cliente previamente registrado.</wsdl:documentation>
+      <wsdl:input message="tns:ConsultaClienteSoapIn" />
+      <wsdl:output message="tns:ConsultaClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaMovimientos">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Método que, a partir de un rango de fechas, mostrará la información de los vales aplicados en ese periodo.)</wsdl:documentation>
+      <wsdl:input message="tns:ConsultaMovimientosSoapIn" />
+      <wsdl:output message="tns:ConsultaMovimientosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaMovimientosPuntosDV">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Método que, a partir de un rango de fechas, mostrará la información de los vales electronicos aplicados en ese periodo.)</wsdl:documentation>
+      <wsdl:input message="tns:ConsultaMovimientosPuntosDVSoapIn" />
+      <wsdl:output message="tns:ConsultaMovimientosPuntosDVSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="VentasFinlagSoap" type="tns:VentasFinlagSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ValidaVale">
+      <soap:operation soapAction="http://tempuri.org/ValidaVale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaVale">
+      <soap:operation soapAction="http://tempuri.org/ConsultaVale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AplicaVale">
+      <soap:operation soapAction="http://tempuri.org/AplicaVale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelaAplicaVale">
+      <soap:operation soapAction="http://tempuri.org/CancelaAplicaVale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TablaAmortizacion">
+      <soap:operation soapAction="http://tempuri.org/TablaAmortizacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TramaImpresion">
+      <soap:operation soapAction="http://tempuri.org/TramaImpresion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaCliente">
+      <soap:operation soapAction="http://tempuri.org/ConsultaCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaMovimientos">
+      <soap:operation soapAction="http://tempuri.org/ConsultaMovimientos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaMovimientosPuntosDV">
+      <soap:operation soapAction="http://tempuri.org/ConsultaMovimientosPuntosDV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="VentasFinlagSoap12" type="tns:VentasFinlagSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ValidaVale">
+      <soap12:operation soapAction="http://tempuri.org/ValidaVale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaVale">
+      <soap12:operation soapAction="http://tempuri.org/ConsultaVale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AplicaVale">
+      <soap12:operation soapAction="http://tempuri.org/AplicaVale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelaAplicaVale">
+      <soap12:operation soapAction="http://tempuri.org/CancelaAplicaVale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TablaAmortizacion">
+      <soap12:operation soapAction="http://tempuri.org/TablaAmortizacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TramaImpresion">
+      <soap12:operation soapAction="http://tempuri.org/TramaImpresion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaCliente">
+      <soap12:operation soapAction="http://tempuri.org/ConsultaCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaMovimientos">
+      <soap12:operation soapAction="http://tempuri.org/ConsultaMovimientos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaMovimientosPuntosDV">
+      <soap12:operation soapAction="http://tempuri.org/ConsultaMovimientosPuntosDV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="VentasFinlag">
+    <wsdl:port name="VentasFinlagSoap" binding="tns:VentasFinlagSoap">
+      <soap:address location="http://finlag.dyndns.org/wsmilano/VentasFinlag.asmx" />
+    </wsdl:port>
+    <wsdl:port name="VentasFinlagSoap12" binding="tns:VentasFinlagSoap12">
+      <soap12:address location="http://finlag.dyndns.org/wsmilano/VentasFinlag.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

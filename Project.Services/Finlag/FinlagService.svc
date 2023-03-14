@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Project.Services.Finlag.FinlagService" CodeBehind="FinlagService.svc.cs" %>

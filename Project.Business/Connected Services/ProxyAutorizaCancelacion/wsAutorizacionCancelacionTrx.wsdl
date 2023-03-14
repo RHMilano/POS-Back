@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SolicitarCancelacionTrx">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codigoTienda" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoCaja" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoTipoTrxCab" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="folioVenta" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="transaccion" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombreCajero" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoCajeroAutorizo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="totalTransaccion" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="totalTransaccionPositivo" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="totalPiezas" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="totalPiezasPositivas" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoRazonMMS" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SolicitarCancelacionTrxResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SolicitarCancelacionTrxResult" type="tns:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Respuesta">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="hayError" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="autorizado" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="sMensaje" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SolicitarCancelacionTrxSoapIn">
+    <wsdl:part name="parameters" element="tns:SolicitarCancelacionTrx" />
+  </wsdl:message>
+  <wsdl:message name="SolicitarCancelacionTrxSoapOut">
+    <wsdl:part name="parameters" element="tns:SolicitarCancelacionTrxResponse" />
+  </wsdl:message>
+  <wsdl:portType name="wsAutorizacionCancelacionTrxSoap">
+    <wsdl:operation name="SolicitarCancelacionTrx">
+      <wsdl:input message="tns:SolicitarCancelacionTrxSoapIn" />
+      <wsdl:output message="tns:SolicitarCancelacionTrxSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsAutorizacionCancelacionTrxSoap" type="tns:wsAutorizacionCancelacionTrxSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SolicitarCancelacionTrx">
+      <soap:operation soapAction="http://tempuri.org/SolicitarCancelacionTrx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsAutorizacionCancelacionTrxSoap12" type="tns:wsAutorizacionCancelacionTrxSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SolicitarCancelacionTrx">
+      <soap12:operation soapAction="http://tempuri.org/SolicitarCancelacionTrx" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsAutorizacionCancelacionTrx">
+    <wsdl:port name="wsAutorizacionCancelacionTrxSoap" binding="tns:wsAutorizacionCancelacionTrxSoap">
+      <soap:address location="http://172.16.50.91/WSPOS/wsAutorizacionCancelacionTrx.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsAutorizacionCancelacionTrxSoap12" binding="tns:wsAutorizacionCancelacionTrxSoap12">
+      <soap12:address location="http://172.16.50.91/WSPOS/wsAutorizacionCancelacionTrx.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

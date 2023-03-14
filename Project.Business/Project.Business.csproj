@@ -1,0 +1,496 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4D1C7004-91DA-47E2-ACFF-C8B66948FA10}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Milano.BackEnd.Business</RootNamespace>
+    <AssemblyName>Milano.BackEnd.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Milano.BackEnd.Business.xml</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.PointOfService, Version=1.12.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Point Of Service\SDK\Microsoft.PointOfService.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
+    <Reference Include="SecurityCCK, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Documentation\Documentos Milano\SecurityCCK_Ver_1.0.1\SecurityCCK.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Actualizador\ActualizadorBusiness.cs" />
+    <Compile Include="BaseBusiness.cs" />
+    <Compile Include="Catalogs\ElementosBusiness.cs" />
+    <Compile Include="Catalogs\ReasonsCodesTransactionBusiness.cs" />
+    <Compile Include="Connected Services\ProxyAutorizaCancelacion\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ProxyCambioContrasenia\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ProxyCapturaLuz\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ProxyCupones\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ProxyDescuentoMercanciaDaniada\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ProxyDescuentoPicoMercancia\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ProxyFinlag\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ProxyInfoDescuento\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ProxyLealtad\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ProxyMayoristas\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ProxyNotaCredito\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ProxyPagoServicios\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ProxyTarjetasRegalo\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ProxyTiempoAire\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ProxyTipoCambio\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ProxyVentaEmpleado\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="External\AdministracionContraseniaBusiness.cs" />
+    <Compile Include="External\AdministracionPagoServiciosBusiness.cs" />
+    <Compile Include="External\AdministracionTiempoAireBusiness.cs" />
+    <Compile Include="External\AdministracionTipoCambio.cs" />
+    <Compile Include="External\AdministracionVentaEmpleadoBusiness.cs" />
+    <Compile Include="External\DescuentoMercanciaDaniadaBusiness.cs" />
+    <Compile Include="External\InformacionServiciosExternosBusiness.cs" />
+    <Compile Include="External\MayoristasBusiness.cs" />
+    <Compile Include="External\RedencionCuponPromocionalBusiness.cs" />
+    <Compile Include="External\NotaCreditoBusiness.cs" />
+    <Compile Include="External\TarjetaBancariaBusiness.cs" />
+    <Compile Include="External\TarjetaRegalosBusiness.cs" />
+    <Compile Include="External\TiempoAireBusiness.cs" />
+    <Compile Include="Finlag\FinlagBusiness.cs" />
+    <Compile Include="General\BuscarDatosMayoristasBusiness.cs" />
+    <Compile Include="General\InstallationServiceBusiness.cs" />
+    <Compile Include="General\CorreoElectronicoBusiness.cs" />
+    <Compile Include="General\LecturaBusiness.cs" />
+    <Compile Include="General\PrintTicketBusiness.cs" />
+    <Compile Include="General\ProductImageHandler.cs" />
+    <Compile Include="General\EgresosBusiness.cs" />
+    <Compile Include="ImpresionMM\ImprimeTicketsMM.cs" />
+    <Compile Include="ImpresionMM\PrintCupon.cs" />
+    <Compile Include="ImpresionMM\PrintRelacionCaja.cs" />
+    <Compile Include="ImpresionMM\PrintTickectLecturaBusiness.cs" />
+    <Compile Include="ImpresionMM\PrintTicketConsultaSaldo.cs" />
+    <Compile Include="ImpresionMM\PrintTicketEgresosBusiness.cs" />
+    <Compile Include="ImpresionMM\PrintTicketEmisionNotaCredito.cs" />
+    <Compile Include="InicioFinDia\AutenticacionOfflineBusiness.cs" />
+    <Compile Include="InicioFinDia\InicioFinDiaBusiness.cs" />
+    <Compile Include="InicioFinDia\LecturaLuzBusiness.cs" />
+    <Compile Include="LogMonitor\addEvent.cs" />
+    <Compile Include="MM\MelodyMilanoBusiness.cs" />
+    <Compile Include="Apartados\ApartadosBusiness.cs" />
+    <Compile Include="Reportes\ReporteBusiness.cs" />
+    <Compile Include="Sales\AutorizaCancelacionTransaccionBusiness.cs" />
+    <Compile Include="Sales\ClientesBusiness.cs" />
+    <Compile Include="Sales\CuponesRedimirBusiness.cs" />
+    <Compile Include="Sales\FraudValidationBusiness.cs" />
+    <Compile Include="General\ConfigGeneralesCajaTiendaBusiness.cs" />
+    <Compile Include="Catalogs\FormaPagoBusiness.cs" />
+    <Compile Include="General\ProductsBusiness.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sales\EmployeeBusiness.cs" />
+    <Compile Include="Sales\PaymentProcessingBusiness.cs" />
+    <Compile Include="Sales\DescuentosDevolucionesBusiness.cs" />
+    <Compile Include="Sales\SalesBusiness.cs" />
+    <Compile Include="Security\SecurityBusiness.cs" />
+    <Compile Include="Sincronizacion\SincronizacionBusiness.cs" />
+    <Compile Include="Utils\TryCatchBusinessExecutor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Project.DataAccess\Project.DataAccess.csproj">
+      <Project>{AD266EB4-6A5A-4517-9959-36D4DAED8713}</Project>
+      <Name>Project.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Project.Dto\Project.Dto.csproj">
+      <Project>{4094f205-6af5-414b-92b3-2bcd6bdd75e7}</Project>
+      <Name>Project.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Project.Repository\Project.Repository.csproj">
+      <Project>{32e25ebf-86b1-43ad-8bba-860950978c9b}</Project>
+      <Name>Project.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Project.Utils\Project.Utils.csproj">
+      <Project>{35ACF4FF-8661-4C7E-AD26-A9E5F2BBD3F7}</Project>
+      <Name>Project.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProxyAutorizaCancelacion\Milano.BackEnd.Business.ProxyAutorizaCancelacion.Respuesta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyAutorizaCancelacion\wsAutorizacionCancelacionTrx.wsdl" />
+    <None Include="Connected Services\ProxyCambioContrasenia\wsCambioPassword.wsdl" />
+    <None Include="Connected Services\ProxyCapturaLuz\wscapturadeluz.wsdl" />
+    <None Include="Connected Services\ProxyCupones\Milano.BackEnd.Business.ProxyCupones.Respuesta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyCupones\wsCupones.wsdl" />
+    <None Include="Connected Services\ProxyDescuentoMercanciaDaniada\Milano.BackEnd.Business.ProxyDescuentoMercanciaDaniada.MercanciaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyDescuentoMercanciaDaniada\Milano.BackEnd.Business.ProxyDescuentoMercanciaDaniada.VentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyDescuentoMercanciaDaniada\wsMercanciaDanada1.wsdl" />
+    <None Include="Connected Services\ProxyDescuentoPicoMercancia\Milano.BackEnd.Business.ProxyDescuentoPicoMercancia.MercanciaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyDescuentoPicoMercancia\Milano.BackEnd.Business.ProxyDescuentoPicoMercancia.VentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyDescuentoPicoMercancia\wsPicosMercancia.wsdl" />
+    <None Include="Connected Services\ProxyFinlag\VentasFinlag.wsdl" />
+    <None Include="Connected Services\ProxyInfoDescuento\infoDescuento1.wsdl" />
+    <None Include="Connected Services\ProxyInfoDescuento\Milano.BackEnd.Business.ProxyInfoDescuento.WsPosResponseModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyLealtad\Milano.BackEnd.Business.ProxyLealtad.RespuestaConsultarCliente.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyLealtad\Milano.BackEnd.Business.ProxyLealtad.RespuestaRegistrarCliente.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyLealtad\wsLealtad.wsdl" />
+    <None Include="Connected Services\ProxyMayoristas\Milano.BackEnd.Business.ProxyMayoristas.ClientesFinales.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyMayoristas\Milano.BackEnd.Business.ProxyMayoristas.InfoClientesFinales.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyMayoristas\Milano.BackEnd.Business.ProxyMayoristas.InfoMayorista.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyMayoristas\Milano.BackEnd.Business.ProxyMayoristas.InfoMayoristas.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyMayoristas\Milano.BackEnd.Business.ProxyMayoristas.InfoVale.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyMayoristas\Milano.BackEnd.Business.ProxyMayoristas.InfoVenta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyMayoristas\WSventamayorista.wsdl" />
+    <None Include="Connected Services\ProxyNotaCredito\Milano.BackEnd.Business.ProxyNotaCredito.Respuesta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyNotaCredito\Milano.BackEnd.Business.ProxyNotaCredito.VerificacionTransferenciaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyNotaCredito\wsNotaCredito1.wsdl" />
+    <None Include="Connected Services\ProxyPagoServicios\Milano.BackEnd.Business.ProxyPagoServicios.DevInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyPagoServicios\Milano.BackEnd.Business.ProxyPagoServicios.InfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyPagoServicios\Milano.BackEnd.Business.ProxyPagoServicios.ReverseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyPagoServicios\Milano.BackEnd.Business.ProxyPagoServicios.TResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyPagoServicios\Milano.BackEnd.Business.ProxyPagoServicios.Valida_UsuariosRC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyPagoServicios\transact.wsdl" />
+    <None Include="Connected Services\ProxyTarjetasRegalo\Milano.BackEnd.Business.ProxyTarjetasRegalo.Respuesta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyTarjetasRegalo\WStarjetasregalo.wsdl" />
+    <None Include="Connected Services\ProxyTiempoAire\Milano.BackEnd.Business.ProxyTiempoAire.DevInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyTiempoAire\Milano.BackEnd.Business.ProxyTiempoAire.InfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyTiempoAire\Milano.BackEnd.Business.ProxyTiempoAire.TResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyTiempoAire\transact.wsdl" />
+    <None Include="Connected Services\ProxyTipoCambio\service1.wsdl" />
+    <None Include="Connected Services\ProxyVentaEmpleado\Milano.BackEnd.Business.ProxyVentaEmpleado.InfoEmpleado.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyVentaEmpleado\Milano.BackEnd.Business.ProxyVentaEmpleado.InfoVenta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyVentaEmpleado\WSvENTAeMPLEADO1.wsdl" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <None Include="Properties\DataSources\System.Xml.XmlNode.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ProxyAutorizaCancelacion\" />
+    <WCFMetadataStorage Include="Connected Services\ProxyCambioContrasenia\" />
+    <WCFMetadataStorage Include="Connected Services\ProxyCapturaLuz\" />
+    <WCFMetadataStorage Include="Connected Services\ProxyCupones\" />
+    <WCFMetadataStorage Include="Connected Services\ProxyDescuentoMercanciaDaniada\" />
+    <WCFMetadataStorage Include="Connected Services\ProxyDescuentoPicoMercancia\" />
+    <WCFMetadataStorage Include="Connected Services\ProxyFinlag\" />
+    <WCFMetadataStorage Include="Connected Services\ProxyInfoDescuento\" />
+    <WCFMetadataStorage Include="Connected Services\ProxyLealtad\" />
+    <WCFMetadataStorage Include="Connected Services\ProxyMayoristas\" />
+    <WCFMetadataStorage Include="Connected Services\ProxyNotaCredito\" />
+    <WCFMetadataStorage Include="Connected Services\ProxyPagoServicios\" />
+    <WCFMetadataStorage Include="Connected Services\ProxyTarjetasRegalo\" />
+    <WCFMetadataStorage Include="Connected Services\ProxyTiempoAire\" />
+    <WCFMetadataStorage Include="Connected Services\ProxyTipoCambio\" />
+    <WCFMetadataStorage Include="Connected Services\ProxyVentaEmpleado\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ProxyTiempoAire\transact.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ProxyTiempoAire\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ProxyTiempoAire\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ProxyTiempoAire\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ProxyPagoServicios\transact.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ProxyPagoServicios\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ProxyPagoServicios\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ProxyPagoServicios\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ProxyCambioContrasenia\wsCambioPassword.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ProxyCambioContrasenia\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ProxyCambioContrasenia\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ProxyCambioContrasenia\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ProxyMayoristas\WSventamayorista.disco" />
+    <None Include="Connected Services\ProxyMayoristas\configuration91.svcinfo" />
+    <None Include="Connected Services\ProxyMayoristas\configuration.svcinfo" />
+    <None Include="Connected Services\ProxyMayoristas\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ProxyDescuentoMercanciaDaniada\configuration91.svcinfo" />
+    <None Include="Connected Services\ProxyDescuentoMercanciaDaniada\configuration.svcinfo" />
+    <None Include="Connected Services\ProxyDescuentoMercanciaDaniada\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ProxyDescuentoPicoMercancia\configuration91.svcinfo" />
+    <None Include="Connected Services\ProxyDescuentoPicoMercancia\configuration.svcinfo" />
+    <None Include="Connected Services\ProxyDescuentoPicoMercancia\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ProxyDescuentoMercanciaDaniada\wsMercanciaDanada1.disco" />
+    <None Include="Connected Services\ProxyDescuentoPicoMercancia\wsPicosMercancia.disco" />
+    <None Include="Connected Services\ProxyNotaCredito\configuration91.svcinfo" />
+    <None Include="Connected Services\ProxyNotaCredito\configuration.svcinfo" />
+    <None Include="Connected Services\ProxyNotaCredito\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ProxyCapturaLuz\wscapturadeluz.disco" />
+    <None Include="Connected Services\ProxyCapturaLuz\configuration91.svcinfo" />
+    <None Include="Connected Services\ProxyCapturaLuz\configuration.svcinfo" />
+    <None Include="Connected Services\ProxyCapturaLuz\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ProxyCupones\wsCupones.disco" />
+    <None Include="Connected Services\ProxyCupones\configuration91.svcinfo" />
+    <None Include="Connected Services\ProxyCupones\configuration.svcinfo" />
+    <None Include="Connected Services\ProxyCupones\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ProxyFinlag\configuration91.svcinfo" />
+    <None Include="Connected Services\ProxyFinlag\configuration.svcinfo" />
+    <None Include="Connected Services\ProxyFinlag\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ProxyVentaEmpleado\WSvENTAeMPLEADO1.disco" />
+    <None Include="Connected Services\ProxyInfoDescuento\configuration91.svcinfo" />
+    <None Include="Connected Services\ProxyInfoDescuento\configuration.svcinfo" />
+    <None Include="Connected Services\ProxyInfoDescuento\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ProxyFinlag\VentasFinlag.disco" />
+    <None Include="Connected Services\ProxyNotaCredito\wsNotaCredito1.disco" />
+    <None Include="Connected Services\ProxyAutorizaCancelacion\wsAutorizacionCancelacionTrx.disco" />
+    <None Include="Connected Services\ProxyAutorizaCancelacion\configuration91.svcinfo" />
+    <None Include="Connected Services\ProxyAutorizaCancelacion\configuration.svcinfo" />
+    <None Include="Connected Services\ProxyAutorizaCancelacion\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ProxyInfoDescuento\infoDescuento1.disco" />
+    <None Include="Connected Services\ProxyLealtad\wsLealtad.disco" />
+    <None Include="Connected Services\ProxyLealtad\configuration91.svcinfo" />
+    <None Include="Connected Services\ProxyLealtad\configuration.svcinfo" />
+    <None Include="Connected Services\ProxyLealtad\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="dll\SecurityCCK.dll" />
+    <None Include="Connected Services\ProxyTipoCambio\service1.disco" />
+    <None Include="Connected Services\ProxyTipoCambio\configuration91.svcinfo" />
+    <None Include="Connected Services\ProxyTipoCambio\configuration.svcinfo" />
+    <None Include="Connected Services\ProxyTipoCambio\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ProxyVentaEmpleado\configuration91.svcinfo" />
+    <None Include="Connected Services\ProxyVentaEmpleado\configuration.svcinfo" />
+    <None Include="Connected Services\ProxyVentaEmpleado\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ProxyTarjetasRegalo\WStarjetasregalo.disco" />
+    <None Include="Connected Services\ProxyTarjetasRegalo\configuration91.svcinfo" />
+    <None Include="Connected Services\ProxyTarjetasRegalo\configuration.svcinfo" />
+    <None Include="Connected Services\ProxyTarjetasRegalo\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="dll\Microsoft.PointOfService.dll" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="RealizarVenta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codigoTienda" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoCaja" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoCajero" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fechaVenta" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFolioVenta" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="transaccion" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FolioTarjeta" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="montoPagado" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RealizarVentaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RealizarVentaResult" type="tns:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Respuesta">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="sError" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sMensaje" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dtFecha" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="dSaldo" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="sEstatus" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iTiendaVendida" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConsultaTarjeta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codigoTienda" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoCaja" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FolioTarjeta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaTarjetaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaTarjetaResult" type="tns:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActivaTarjeta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codigoTienda" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoCaja" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoCajero" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fechaVenta" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="FolioTarjeta" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="transaccion" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActivaTarjetaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActivaTarjetaResult" type="tns:Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RealizarVentaSoapIn">
+    <wsdl:part name="parameters" element="tns:RealizarVenta" />
+  </wsdl:message>
+  <wsdl:message name="RealizarVentaSoapOut">
+    <wsdl:part name="parameters" element="tns:RealizarVentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaTarjetaSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaTarjeta" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaTarjetaSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaTarjetaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActivaTarjetaSoapIn">
+    <wsdl:part name="parameters" element="tns:ActivaTarjeta" />
+  </wsdl:message>
+  <wsdl:message name="ActivaTarjetaSoapOut">
+    <wsdl:part name="parameters" element="tns:ActivaTarjetaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="wsTarjetasRegaloSoap">
+    <wsdl:operation name="RealizarVenta">
+      <wsdl:input message="tns:RealizarVentaSoapIn" />
+      <wsdl:output message="tns:RealizarVentaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaTarjeta">
+      <wsdl:input message="tns:ConsultaTarjetaSoapIn" />
+      <wsdl:output message="tns:ConsultaTarjetaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivaTarjeta">
+      <wsdl:input message="tns:ActivaTarjetaSoapIn" />
+      <wsdl:output message="tns:ActivaTarjetaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsTarjetasRegaloSoap" type="tns:wsTarjetasRegaloSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RealizarVenta">
+      <soap:operation soapAction="http://tempuri.org/RealizarVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaTarjeta">
+      <soap:operation soapAction="http://tempuri.org/ConsultaTarjeta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivaTarjeta">
+      <soap:operation soapAction="http://tempuri.org/ActivaTarjeta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsTarjetasRegaloSoap12" type="tns:wsTarjetasRegaloSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RealizarVenta">
+      <soap12:operation soapAction="http://tempuri.org/RealizarVenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaTarjeta">
+      <soap12:operation soapAction="http://tempuri.org/ConsultaTarjeta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivaTarjeta">
+      <soap12:operation soapAction="http://tempuri.org/ActivaTarjeta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsTarjetasRegalo">
+    <wsdl:port name="wsTarjetasRegaloSoap" binding="tns:wsTarjetasRegaloSoap">
+      <soap:address location="http://pruebas-mm:8089/WSPOS/WStarjetasregalo.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsTarjetasRegaloSoap12" binding="tns:wsTarjetasRegaloSoap12">
+      <soap12:address location="http://pruebas-mm:8089/WSPOS/WStarjetasregalo.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

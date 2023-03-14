@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="CrearClienteFinal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codigoTienda" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoCaja" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoCajero" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="IFE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RFC" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Apellidos" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dFechaNacimiento" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sexo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Calle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NumeroExterior" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NumeroInterior" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Colonia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Municipio" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CP" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ciudad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Estado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoMayorista" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Telefono" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearClienteFinalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CrearClienteFinalResult" type="tns:ClientesFinales" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ClientesFinales">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="sError" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sMensaje" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sNombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sApellidos" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dtFechaNatimiento" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="sSexo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sIFE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sRFC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sTelefono" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="codigoMayorista" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="codigoClienteFinal" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConsultarVale">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codigoTienda" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoCaja" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoCajero" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="numeroVale" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarValeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarValeResult" type="tns:InfoVale" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="InfoVale">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="sError" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sMensaje" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="codigoMayorista" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Estatus" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="UltimaModificacion" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaCanje" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="NoAutorizacion" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NoRevision" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="codigoTiendaPago" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="referencia" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RealizarPago">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codigoTienda" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoCaja" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoCajero" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoMayorista" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="montoPago" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="folioVenta" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoTransaccion" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fechaVenta" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RealizarPagoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RealizarPagoResult" type="tns:InfoVenta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="InfoVenta">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="sError" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sMensaje" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="gSesion" type="s1:guid" />
+          <s:element minOccurs="1" maxOccurs="1" name="iNumeroAutorizacion" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RealizarVenta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codigoTienda" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoCaja" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoCajero" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoMayorista" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoClienteFinal" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="numeroVale" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="montoVenta" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="montoFinanciado" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="folioVenta" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoTransaccion" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="fechaVenta" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RealizarVentaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RealizarVentaResult" type="tns:InfoVenta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaMayoristas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codigoTienda" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoCaja" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoCajero" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoMayorista" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="soloActivos" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="soloTiendaActual" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaMayoristasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaMayoristasResult" type="tns:InfoMayoristas" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="InfoMayoristas">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="sError" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sMensaje" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iCantidadMayoristas" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="iCantidadRetornada" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="bCantidadLimitada" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="infoMayorista" type="tns:ArrayOfInfoMayorista" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfInfoMayorista">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="InfoMayorista" nillable="true" type="tns:InfoMayorista" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="InfoMayorista">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="sError" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sMensaje" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumeroMayorista" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Estatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Calle" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NumeroExterior" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NumeroInterior" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Colonia" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CodigoPostal" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Municipio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ciudad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Estado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RFC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Telefono" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LimiteCredito" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Saldo" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreditoDisponible" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="codigoTienda" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaUltimoPago" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="PorcentajeComision" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PagosPeriodoActual" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="estadoCuenta" type="tns:InfoEstadoCuenta" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="InfoEstadoCuenta">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="bExiste" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaCorte" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Año" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Periodo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaInicial" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaFinal" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaLimitePago" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="LimiteCredito" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SaldoAnterior" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Compras" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Pagos" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotasDeCredito" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="NotasDeCargo" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SaldoActual" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PagoQuincenal" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PagoMinimo" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PagoVencido" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreditoDisponible" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumeroAtrasos" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConsultaMayorista">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codigoTienda" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoCaja" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoCajero" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoMayorista" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="soloActivos" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaMayoristaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaMayoristaResult" type="tns:InfoMayorista" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarClienteFinal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codigoTienda" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoCaja" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoCajero" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoMayorista" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="codigoClienteFinal" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombres" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="apellidos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IFE" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RFC" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuscarClienteFinalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuscarClienteFinalResult" type="tns:InfoClientesFinales" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="InfoClientesFinales">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="sError" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sMensaje" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="clientesFinales" type="tns:ArrayOfClientesFinales" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfClientesFinales">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ClientesFinales" nillable="true" type="tns:ClientesFinales" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CrearClienteFinalSoapIn">
+    <wsdl:part name="parameters" element="tns:CrearClienteFinal" />
+  </wsdl:message>
+  <wsdl:message name="CrearClienteFinalSoapOut">
+    <wsdl:part name="parameters" element="tns:CrearClienteFinalResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarValeSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarVale" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarValeSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarValeResponse" />
+  </wsdl:message>
+  <wsdl:message name="RealizarPagoSoapIn">
+    <wsdl:part name="parameters" element="tns:RealizarPago" />
+  </wsdl:message>
+  <wsdl:message name="RealizarPagoSoapOut">
+    <wsdl:part name="parameters" element="tns:RealizarPagoResponse" />
+  </wsdl:message>
+  <wsdl:message name="RealizarVentaSoapIn">
+    <wsdl:part name="parameters" element="tns:RealizarVenta" />
+  </wsdl:message>
+  <wsdl:message name="RealizarVentaSoapOut">
+    <wsdl:part name="parameters" element="tns:RealizarVentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaMayoristasSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaMayoristas" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaMayoristasSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaMayoristasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaMayoristaSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaMayorista" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaMayoristaSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaMayoristaResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuscarClienteFinalSoapIn">
+    <wsdl:part name="parameters" element="tns:BuscarClienteFinal" />
+  </wsdl:message>
+  <wsdl:message name="BuscarClienteFinalSoapOut">
+    <wsdl:part name="parameters" element="tns:BuscarClienteFinalResponse" />
+  </wsdl:message>
+  <wsdl:portType name="wsVentaMayoristaSoap">
+    <wsdl:operation name="CrearClienteFinal">
+      <wsdl:input message="tns:CrearClienteFinalSoapIn" />
+      <wsdl:output message="tns:CrearClienteFinalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarVale">
+      <wsdl:input message="tns:ConsultarValeSoapIn" />
+      <wsdl:output message="tns:ConsultarValeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RealizarPago">
+      <wsdl:input message="tns:RealizarPagoSoapIn" />
+      <wsdl:output message="tns:RealizarPagoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RealizarVenta">
+      <wsdl:input message="tns:RealizarVentaSoapIn" />
+      <wsdl:output message="tns:RealizarVentaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaMayoristas">
+      <wsdl:input message="tns:ConsultaMayoristasSoapIn" />
+      <wsdl:output message="tns:ConsultaMayoristasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaMayorista">
+      <wsdl:input message="tns:ConsultaMayoristaSoapIn" />
+      <wsdl:output message="tns:ConsultaMayoristaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarClienteFinal">
+      <wsdl:input message="tns:BuscarClienteFinalSoapIn" />
+      <wsdl:output message="tns:BuscarClienteFinalSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsVentaMayoristaSoap" type="tns:wsVentaMayoristaSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CrearClienteFinal">
+      <soap:operation soapAction="http://tempuri.org/CrearClienteFinal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarVale">
+      <soap:operation soapAction="http://tempuri.org/ConsultarVale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RealizarPago">
+      <soap:operation soapAction="http://tempuri.org/RealizarPago" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RealizarVenta">
+      <soap:operation soapAction="http://tempuri.org/RealizarVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaMayoristas">
+      <soap:operation soapAction="http://tempuri.org/ConsultaMayoristas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaMayorista">
+      <soap:operation soapAction="http://tempuri.org/ConsultaMayorista" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarClienteFinal">
+      <soap:operation soapAction="http://tempuri.org/BuscarClienteFinal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsVentaMayoristaSoap12" type="tns:wsVentaMayoristaSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CrearClienteFinal">
+      <soap12:operation soapAction="http://tempuri.org/CrearClienteFinal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarVale">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarVale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RealizarPago">
+      <soap12:operation soapAction="http://tempuri.org/RealizarPago" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RealizarVenta">
+      <soap12:operation soapAction="http://tempuri.org/RealizarVenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaMayoristas">
+      <soap12:operation soapAction="http://tempuri.org/ConsultaMayoristas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaMayorista">
+      <soap12:operation soapAction="http://tempuri.org/ConsultaMayorista" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarClienteFinal">
+      <soap12:operation soapAction="http://tempuri.org/BuscarClienteFinal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsVentaMayorista">
+    <wsdl:port name="wsVentaMayoristaSoap" binding="tns:wsVentaMayoristaSoap">
+      <soap:address location="http://pruebas-mm:8089/WSPOS/WSventamayorista.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsVentaMayoristaSoap12" binding="tns:wsVentaMayoristaSoap12">
+      <soap12:address location="http://pruebas-mm:8089/WSPOS/WSventamayorista.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

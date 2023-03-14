@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4094F205-6AF5-414B-92B3-2BCD6BDD75E7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Milano.BackEnd.Dto</RootNamespace>
+    <AssemblyName>Milano.BackEnd.Dto</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Milano.BackEnd.Dto.xml</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Actualizador\ObtenerConfiguracionServidor.cs" />
+    <Compile Include="Actualizador\ValidationResponse.cs" />
+    <Compile Include="Actualizador\BackupResponse.cs" />
+    <Compile Include="Actualizador\BackupRequest.cs" />
+    <Compile Include="Actualizador\DescargaArchivoRequest.cs" />
+    <Compile Include="Actualizador\DescargaArchivoResponse.cs" />
+    <Compile Include="Actualizador\DescompresionRequest.cs" />
+    <Compile Include="Actualizador\EstatusActualizacionSoftwareResponse.cs" />
+    <Compile Include="Actualizador\ProcesoActualizacionSoftwareResponse.cs" />
+    <Compile Include="Actualizador\ObtenerVersionSoftwareResponse.cs" />
+    <Compile Include="Actualizador\InformacionVersionSoftware.cs" />
+    <Compile Include="Actualizador\ActualizacionSoftwareResponse.cs" />
+    <Compile Include="Actualizador\VersionActualPOS.cs" />
+    <Compile Include="Apartados\TransApartadoResponse.cs" />
+    <Compile Include="Apartados\AnularTotalizarApartadoRequest.cs" />
+    <Compile Include="Apartados\ApartadoBusquedaRequest.cs" />
+    <Compile Include="Apartados\ApartadoPlazosResponse.cs" />
+    <Compile Include="Apartados\ApartadosEncontradosResponse.cs" />
+    <Compile Include="Apartados\PagoMayoristaRequest.cs" />
+    <Compile Include="BBVAv2\Card.cs" />
+    <Compile Include="BBVAv2\CardMSIConfig.cs" />
+    <Compile Include="BBVAv2\ConfigMSI.cs" />
+    <Compile Include="BBVAv2\MsiItem.cs" />
+    <Compile Include="BBVAv2\SaleRequestBBVAComplete.cs" />
+    <Compile Include="BBVAv2\SaleRequestBBVA.cs" />
+    <Compile Include="BBVAv2\SaleResponseBBVA.cs" />
+    <Compile Include="BBVAv2\SettingsMilano.cs" />
+    <Compile Include="Catalogs\Divisa.cs" />
+    <Compile Include="Catalogs\ReasonsCodesTransactionRequest.cs" />
+    <Compile Include="Catalogs\ReasonsCodesTransactionResponse.cs" />
+    <Compile Include="Configuracion\ConfiguracionBoton.cs" />
+    <Compile Include="Configuracion\ConfiguracionBotonera.cs" />
+    <Compile Include="Finlag\AplicaValeRequest.cs" />
+    <Compile Include="Finlag\AplicaValeResponse.cs" />
+    <Compile Include="Finlag\CancelaAplicaValeRequest.cs" />
+    <Compile Include="Finlag\CancelaAplicaValeResponse.cs" />
+    <Compile Include="Finlag\ClienteFinlag.cs" />
+    <Compile Include="Finlag\ClienteFinlagResponse.cs" />
+    <Compile Include="Finlag\ConsultaMovientoPDVRequest.cs" />
+    <Compile Include="Finlag\ConsultaMovientoPDVResult.cs" />
+    <Compile Include="Finlag\ConsultaMovimientosResult.cs" />
+    <Compile Include="Finlag\ConsultaTramaImpresionResult.cs" />
+    <Compile Include="Finlag\ConsultaValeFinlagRequest.cs" />
+    <Compile Include="Finlag\ConsultaValeFinlagResult.cs" />
+    <Compile Include="Finlag\TablaAmortizacionRequest.cs" />
+    <Compile Include="Finlag\TablaAmortizacionResult.cs" />
+    <Compile Include="Finlag\ValidaValeRequest.cs" />
+    <Compile Include="Finlag\ValidaValeResult.cs" />
+    <Compile Include="FormasPago\AltaClienteFinalRequest.cs" />
+    <Compile Include="FormasPago\BusquedaMayoristasRequest.cs" />
+    <Compile Include="FormasPago\BusquedaMayoristasResponse.cs" />
+    <Compile Include="FormasPago\ProcesarMovimientoPagoTransferenciaRequest.cs" />
+    <Compile Include="FormasPago\ProcesarMovimientoPagoPinPadMovilRequest.cs" />
+    <Compile Include="FormasPago\ProcesarMovimientoRedencionCuponResponse.cs" />
+    <Compile Include="FormasPago\ProcesarMovimientoRedencionCuponRequest.cs" />
+    <Compile Include="FormasPago\ProcesarMovimientoTarjetaBancariaRetiro.cs" />
+    <Compile Include="FormasPago\ProcesarMovimientoTarjetaBancariaPuntos.cs" />
+    <Compile Include="FormasPago\ProcesarMovimientoTarjetaBancariaVenta.cs" />
+    <Compile Include="FormasPago\ProcesarMovimientoTarjetaBancariaRequest.cs" />
+    <Compile Include="FormasPago\ProcesarMovimientoNotaCreditoRequest.cs" />
+    <Compile Include="General\AlmacenarImagenArticuloRequest.cs" />
+    <Compile Include="General\CambioDivisaMilano.cs" />
+    <Compile Include="General\CompaniasPagoServicioResponse.cs" />
+    <Compile Include="Catalogs\Elemento.cs" />
+    <Compile Include="General\ConfigGeneralesRecurso.cs" />
+    <Compile Include="General\ConfiguracionMSI.cs" />
+    <Compile Include="General\SaleResponse.cs" />
+    <Compile Include="General\SaleRequest.cs" />
+    <Compile Include="General\InfoService.cs" />
+    <Compile Include="General\LecturaX.cs" />
+    <Compile Include="General\Denominacion.cs" />
+    <Compile Include="General\Lectura.cs" />
+    <Compile Include="General\LecturaCaja.cs" />
+    <Compile Include="General\LecturaTotalDetalleFormaPago.cs" />
+    <Compile Include="General\ConfigGeneralesCajaTiendaFormaPago.cs" />
+    <Compile Include="General\ConfigGeneralesCajaTiendaImpuesto.cs" />
+    <Compile Include="General\FuncionGeneralCajaResponse.cs" />
+    <Compile Include="General\CredencialesServicioExterno.cs" />
+    <Compile Include="General\Egreso.cs" />
+    <Compile Include="General\EstiloDto.cs" />
+    <Compile Include="General\InformacionAsociadaRetiroEfectivo.cs" />
+    <Compile Include="General\LecturaZGuardarResponse.cs" />
+    <Compile Include="General\PagoBancarioResponse.cs" />
+    <Compile Include="General\RetiroParcialEfectivoResponse.cs" />
+    <Compile Include="General\GetRateResponse.cs" />
+    <Compile Include="General\TipoCambioActualizado.cs" />
+    <Compile Include="Impresion\PrinterConfigRequest.cs" />
+    <Compile Include="Impresion\PrinterConfigResponse.cs" />
+    <Compile Include="Impresion\PrintLecturaRequest.cs" />
+    <Compile Include="Impresion\PrintLecturaResponse.cs" />
+    <Compile Include="Impresion\PrintTicketCabecerasResponse.cs" />
+    <Compile Include="Impresion\PrintTicketEgresosRequest.cs" />
+    <Compile Include="Impresion\PrintTicketEgresosResponse.cs" />
+    <Compile Include="Impresion\PrintTicketItem.cs" />
+    <Compile Include="Impresion\PrintTicketSaveRequest.cs" />
+    <Compile Include="General\RetiroParcialEfectivo.cs" />
+    <Compile Include="General\InformacionTipoCambio.cs" />
+    <Compile Include="General\PagoServiciosRequest.cs" />
+    <Compile Include="General\ProductsFindResponse.cs" />
+    <Compile Include="General\TipoCambioResponse.cs" />
+    <Compile Include="General\TipoCambioRequest.cs" />
+    <Compile Include="General\BuscarDatosMayoristasRequest.cs" />
+    <Compile Include="General\BuscarDatosMayoristasResponse.cs" />
+    <Compile Include="General\CompaniasPagoServiciosResponse.cs" />
+    <Compile Include="General\ConfigGeneralesCajaTiendaResponse.cs" />
+    <Compile Include="Catalogs\FormaPagoResponse.cs" />
+    <Compile Include="General\ConfiguracionServiceRequest.cs" />
+    <Compile Include="General\MontoTAResponse.cs" />
+    <Compile Include="Impresion\PrintTicketResponse.cs" />
+    <Compile Include="Impresion\RelacionCajaDesgloseRespose.cs" />
+    <Compile Include="Impresion\RelacionCajaDetalleResponse.cs" />
+    <Compile Include="Impresion\RelacionCajaHeaderResponse.cs" />
+    <Compile Include="InicioFinDia\ControlInicioFinDeDia.cs" />
+    <Compile Include="Impresion\RelacionCajaRespose.cs" />
+    <Compile Include="InicioFinDia\DepositoAsociado.cs" />
+    <Compile Include="InicioFinDia\Desglose.cs" />
+    <Compile Include="InicioFinDia\DetalleLecturaFormaPago.cs" />
+    <Compile Include="InicioFinDia\GrupoRelacionCaja.cs" />
+    <Compile Include="InicioFinDia\SeccionRelacionCaja.cs" />
+    <Compile Include="InicioFinDia\RelacionCaja.cs" />
+    <Compile Include="InicioFinDia\CompendioCashOut.cs" />
+    <Compile Include="InicioFinDia\LecturaZ.cs" />
+    <Compile Include="InicioFinDia\CashOutCaja.cs" />
+    <Compile Include="InicioFinDia\InformacionCajaRequest.cs" />
+    <Compile Include="InicioFinDia\ResultadoValidacionCaja.cs" />
+    <Compile Include="InicioFinDia\FinDiaResponse.cs" />
+    <Compile Include="InicioFinDia\FechaOperacionResponse.cs" />
+    <Compile Include="InicioFinDia\ValidacionOperacionResponse.cs" />
+    <Compile Include="InicioFinDia\AutenticacionOfflineRequest.cs" />
+    <Compile Include="InicioFinDia\CapturaLuzRequest.cs" />
+    <Compile Include="InicioFinDia\InicioDiaResponse.cs" />
+    <Compile Include="Lealtad\ConsultaClienteRequest.cs" />
+    <Compile Include="Lealtad\ConsultarClienteResponse.cs" />
+    <Compile Include="Lealtad\RegistroLealtadRequest.cs" />
+    <Compile Include="Lealtad\RegistroLealtadResponse.cs" />
+    <Compile Include="MilanoEntities\UpdatePlanFinanciamientoTCMM.cs" />
+    <Compile Include="MM\FinalizarCompraRequest.cs" />
+    <Compile Include="MM\FinalizarCompraResponse.cs" />
+    <Compile Include="MM\FinalizarPagoTCMMRequest.cs" />
+    <Compile Include="MM\CodigoRespuestaTCMM.cs" />
+    <Compile Include="MM\InformacionTCMMResponse.cs" />
+    <Compile Include="MM\InformacionTCMMRequest.cs" />
+    <Compile Include="FormasPago\BusquedaClienteFinalRequest.cs" />
+    <Compile Include="FormasPago\BusquedaClienteFinalResponse.cs" />
+    <Compile Include="MM\PlanesFinanciamientoRequest.cs" />
+    <Compile Include="MM\PlanesFinanciamientoResponse.cs" />
+    <Compile Include="MM\PlanFinanciamientoResponse.cs" />
+    <Compile Include="MM\PrimeraCompraResponse.cs" />
+    <Compile Include="PagoServicios\ElementoFormulario.cs" />
+    <Compile Include="PagoServicios\InfoElementosRequest.cs" />
+    <Compile Include="PagoServicios\OpcionSelect.cs" />
+    <Compile Include="PagoServicios\PagoServiciosInfoAdicional.cs" />
+    <Compile Include="PagoServicios\SelectElement.cs" />
+    <Compile Include="PagoServicios\InputElement.cs" />
+    <Compile Include="PagoServicios\PagoServiciosResponse.cs" />
+    <Compile Include="PasarelaPagos\V2\ConfiguracionPINPAD.cs" />
+    <Compile Include="Reportes\ReporteApartadosDetalleLineaResponse.cs" />
+    <Compile Include="Reportes\ReporteApartadosDetalleRequest.cs" />
+    <Compile Include="Reportes\ReporteApartadosDetalleResponse.cs" />
+    <Compile Include="Reportes\ReporteApartadosSinDetalleRequest.cs" />
+    <Compile Include="Reportes\ReporteApartadosSinDetalleResponse.cs" />
+    <Compile Include="Reportes\ReporteDevolucionesSKURequest.cs" />
+    <Compile Include="Reportes\ReporteDevolucionesSKUResponse.cs" />
+    <Compile Include="Reportes\ReporteIngresosEgresosRequest.cs" />
+    <Compile Include="Reportes\ReporteIngresosEgresosResponse.cs" />
+    <Compile Include="Reportes\ReporteResponse.cs" />
+    <Compile Include="Reportes\ReporteVentaCajaRequest.cs" />
+    <Compile Include="Reportes\ReporteVentaCajaResponse.cs" />
+    <Compile Include="Reportes\ReporteRelacionCajaRequest.cs" />
+    <Compile Include="Reportes\ReporteVentaDepartamentoRequest.cs" />
+    <Compile Include="Reportes\ReporteVentaDepartamentoResponse.cs" />
+    <Compile Include="Reportes\ReporteVentaSKURequest.cs" />
+    <Compile Include="Reportes\ReporteVentaSKUResponse.cs" />
+    <Compile Include="Reportes\ReporteVentasPorHoraRequest.cs" />
+    <Compile Include="Reportes\ReporteVentasPorHoraResponse.cs" />
+    <Compile Include="Reportes\ReporteVentaVendedorRequest.cs" />
+    <Compile Include="Reportes\ReporteVentaVendedorResponse.cs" />
+    <Compile Include="Sales\AutorizaCancelacionTransaccionRequest.cs" />
+    <Compile Include="Sales\AutorizaCancelacionTransaccionResponse.cs" />
+    <Compile Include="Sales\CuponPersistirRequest.cs" />
+    <Compile Include="Sales\CuponPersistirResponse.cs" />
+    <Compile Include="Sales\CuponRedimirRequest.cs" />
+    <Compile Include="Sales\CuponRedimirResponse.cs" />
+    <Compile Include="Sales\SolicitudAutorizacionDescuentoResponse.cs" />
+    <Compile Include="Sales\SolicitudAutorizacionDescuentoRequest.cs" />
+    <Compile Include="Sales\InformacionAsociadaDevolucion.cs" />
+    <Compile Include="Sales\AltaClientesResponse.cs" />
+    <Compile Include="Sales\CuponPromocionalVenta.cs" />
+    <Compile Include="Sales\DevolverArticuloRequest.cs" />
+    <Compile Include="Sales\CambiarPrecioRequest.cs" />
+    <Compile Include="Sales\BusquedaTarjetasRegalo.cs" />
+    <Compile Include="Sales\ConsultaDescuentoRequest.cs" />
+    <Compile Include="Sales\DescuentoMercanciaDaniadaResponse.cs" />
+    <Compile Include="Sales\DescuentoPromocionalFormaPago.cs" />
+    <Compile Include="Sales\DescuentoPromocionalAplicado.cs" />
+    <Compile Include="Sales\DescuentoPromocionalesAplicados.cs" />
+    <Compile Include="Sales\DescuentoPromocionalVenta.cs" />
+    <Compile Include="Sales\DescuentoTCMMPrimeraCompra.cs" />
+    <Compile Include="Sales\DevolucionResponse.cs" />
+    <Compile Include="Sales\InformacionFoliosTarjeta.cs" />
+    <Compile Include="Sales\InformacionMayorista.cs" />
+    <Compile Include="Sales\InformacionPagoTCMM.cs" />
+    <Compile Include="Sales\InfoValeResponse.cs" />
+    <Compile Include="FormasPago\ProcesarMovimientoMayorista.cs" />
+    <Compile Include="Recovery\VenVentasCab.cs" />
+    <Compile Include="Recovery\VenControlCajaReg.cs" />
+    <Compile Include="Recovery\TrxValoresDet.cs" />
+    <Compile Include="Recovery\TrxTransaccionesDet.cs" />
+    <Compile Include="Recovery\TrxTransaccionesCab.cs" />
+    <Compile Include="Recovery\Transaccion.cs" />
+    <Compile Include="General\CorreoElectronicoRequest.cs" />
+    <Compile Include="General\CorreoElectronicoResponse.cs" />
+    <Compile Include="General\EstatusRequest.cs" />
+    <Compile Include="General\OperationResponse.cs" />
+    <Compile Include="Impresion\PrintTicketRequest.cs" />
+    <Compile Include="General\ProductsRequest.cs" />
+    <Compile Include="General\ProductsResponse.cs" />
+    <Compile Include="General\ResponseBusiness.cs" />
+    <Compile Include="General\TiempoAireRequest.cs" />
+    <Compile Include="General\TokenDto.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Apartados\AbonoApartadoRequest.cs" />
+    <Compile Include="Sales\AltaClienteRequest.cs" />
+    <Compile Include="Apartados\ApartadoResponse.cs" />
+    <Compile Include="Sales\DescuentoMercanciaDañada.cs" />
+    <Compile Include="Sales\OperacionLineaTicketVentaResponse.cs" />
+    <Compile Include="Sales\PagoTCMMRequest.cs" />
+    <Compile Include="Sales\PostAnularVentaRequest.cs" />
+    <Compile Include="FormasPago\BusquedaMayoristaRequest.cs" />
+    <Compile Include="FormasPago\BusquedaMayoristaResponse.cs" />
+    <Compile Include="Sales\BusquedaTransaccionResponse.cs" />
+    <Compile Include="Sales\BusquedaTransaccionRequest.cs" />
+    <Compile Include="Sales\ClienteRequest.cs" />
+    <Compile Include="Sales\ClienteResponse.cs" />
+    <Compile Include="Sales\DescuentoPromocionalLinea.cs" />
+    <Compile Include="Sales\EstadoCuentaMayorista.cs" />
+    <Compile Include="Apartados\FinalizarApartadoRequest.cs" />
+    <Compile Include="Sales\InformacionProveedorExternoAsociadaPS.cs" />
+    <Compile Include="Sales\InformacionProveedorExternoAsociadaTA.cs" />
+    <Compile Include="Sales\DigitoVerificadorArticulo.cs" />
+    <Compile Include="Sales\EmpleadoMilano.cs" />
+    <Compile Include="Sales\FinalizarVentaRequest.cs" />
+    <Compile Include="Sales\FormaPagoUtilizado.cs" />
+    <Compile Include="Sales\InformacionTarjetaRegalo.cs" />
+    <Compile Include="Sales\LineaTicket.cs" />
+    <Compile Include="Sales\AnularTotalizarVentaRequest.cs" />
+    <Compile Include="Sales\DescuentoDirectoLinea.cs" />
+    <Compile Include="Sales\Articulo.cs" />
+    <Compile Include="FormasPago\ProcesarMovimientoTarjetaRegaloRequest.cs" />
+    <Compile Include="FormasPago\ProcesarMovimientoVentaEmpleadoRequest.cs" />
+    <Compile Include="Sales\ReturnOfSaleValidationRequest.cs" />
+    <Compile Include="Apartados\TotalizarApartadoRequest.cs" />
+    <Compile Include="Apartados\TotalizarApartadoResponse.cs" />
+    <Compile Include="Sales\OperacionVentaRequest.cs" />
+    <Compile Include="Sales\SuspenderVentaRequest.cs" />
+    <Compile Include="Sales\CabeceraVentaRequest.cs" />
+    <Compile Include="Sales\EliminarLineaTicketRequest.cs" />
+    <Compile Include="Sales\TotalizarVentaResponse.cs" />
+    <Compile Include="Sales\TotalizarVentaRequest.cs" />
+    <Compile Include="Sales\EmployeeRequest.cs" />
+    <Compile Include="Sales\EmployeeResponse.cs" />
+    <Compile Include="Sales\FraudValidationRequest.cs" />
+    <Compile Include="Sales\ValidarCuponRequest.cs" />
+    <Compile Include="Sales\ValidarFolioWebDetalleResponse.cs" />
+    <Compile Include="Sales\ValidarFolioWebRequest.cs" />
+    <Compile Include="Sales\ValidarFolioWebResponse.cs" />
+    <Compile Include="Sales\VentaResponse.cs" />
+    <Compile Include="Security\UserReponse.cs" />
+    <Compile Include="Security\LogoutRequest.cs" />
+    <Compile Include="Security\UserRequest.cs" />
+    <Compile Include="Security\VersionRequest.cs" />
+    <Compile Include="Sincronizacion\InformacionSincronizador.cs" />
+    <Compile Include="Sincronizacion\ResultadoSincronizacion.cs" />
+    <Compile Include="Sincronizacion\SincronizacionRequest.cs" />
+    <Compile Include="Sincronizacion\SentenciaSQL.cs" />
+    <Compile Include="Sincronizacion\Periodicidad.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

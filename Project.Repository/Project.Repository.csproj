@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{32E25EBF-86B1-43AD-8BBA-860950978C9B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Milano.BackEnd.Repository</RootNamespace>
+    <AssemblyName>Milano.BackEnd.Repository</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Milano.BackEnd.Repository.xml</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Actualizador\ActualizadorRepository.cs" />
+    <Compile Include="Apartados\ApartadoAbonoRepository.cs" />
+    <Compile Include="BBVAv2\ConfigurationFiles.cs" />
+    <Compile Include="BBVAv2\RequestRepository.cs" />
+    <Compile Include="BBVAv2\Request_v1_5.cs" />
+    <Compile Include="BBVAv2\Response_v1_5.cs" />
+    <Compile Include="Catalogs\ElementosRepository.cs" />
+    <Compile Include="Catalogs\MayoristaRepository.cs" />
+    <Compile Include="Catalogs\ReasonsCodesTransactionRepository.cs" />
+    <Compile Include="Finlag\FinlagRepository.cs" />
+    <Compile Include="FormasPago\FormasPagoRepository.cs" />
+    <Compile Include="General\AdministracionTipoCambioRepository.cs" />
+    <Compile Include="General\AdministracionVentaEmpleadoRepository.cs" />
+    <Compile Include="General\FuncionesGeneralesCajaRepository.cs" />
+    <Compile Include="General\InstallationServiceRepository.cs" />
+    <Compile Include="General\CorreoElectronicoRepository.cs" />
+    <Compile Include="General\LecturaRepository.cs" />
+    <Compile Include="General\PrintReporteRepository.cs" />
+    <Compile Include="General\PrintTicketRepository.cs" />
+    <Compile Include="General\ProductImageHandlerRepository.cs" />
+    <Compile Include="General\PagoServiciosRepository.cs" />
+    <Compile Include="Apartados\ApartadoRepository.cs" />
+    <Compile Include="General\EgresosRepository.cs" />
+    <Compile Include="InicioFinDia\AutenticacionOfflineRepository.cs" />
+    <Compile Include="InicioFinDia\InicioFinDiaRepository.cs" />
+    <Compile Include="InicioFinDia\LecturaLuzRepository.cs" />
+    <Compile Include="MM\MelodyMilanoRepository.cs" />
+    <Compile Include="Reporte\ReporteRepository.cs" />
+    <Compile Include="Sales\ClientesRepository.cs" />
+    <Compile Include="Sales\CuponesRedimirRepository.cs" />
+    <Compile Include="Sales\DescuentosPromocionesRepository.cs" />
+    <Compile Include="Sales\FraudValidationRepository.cs" />
+    <Compile Include="General\ConfigGeneralesCajaTiendaRepository.cs" />
+    <Compile Include="General\ProductsRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BaseRepository.cs" />
+    <Compile Include="Sales\EmployeeRepository.cs" />
+    <Compile Include="Sales\DescuentoMercanciaDañadaRepository.cs" />
+    <Compile Include="Sales\PaymentProcessingRepository.cs" />
+    <Compile Include="Sales\DescuentosDevolucionesRepository.cs" />
+    <Compile Include="Sales\SalesRepository.cs" />
+    <Compile Include="Sales\TarjetasRegaloRepository.cs" />
+    <Compile Include="Security\InformacionServiciosExternosRepository.cs" />
+    <Compile Include="Security\SecurityRepository.cs" />
+    <Compile Include="Sincronizacion\SincronizacionRepository.cs" />
+    <Compile Include="Utils\TransactionLogRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Project.DataAccess\Project.DataAccess.csproj">
+      <Project>{ad266eb4-6a5a-4517-9959-36d4daed8713}</Project>
+      <Name>Project.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Project.Dto\Project.Dto.csproj">
+      <Project>{4094f205-6af5-414b-92b3-2bcd6bdd75e7}</Project>
+      <Name>Project.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Project.Utils\Project.Utils.csproj">
+      <Project>{35acf4ff-8661-4c7e-ad26-a9e5f2bbd3f7}</Project>
+      <Name>Project.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
