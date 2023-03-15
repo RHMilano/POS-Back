@@ -13,6 +13,7 @@ namespace Milano.BackEnd.Dto.Lealtad
     [DataContract]
     public class ConsultaClienteLealtadRequest
     {
+
         /// <summary>
         /// Codigo del cliente de sistema de credito
         /// </summary>

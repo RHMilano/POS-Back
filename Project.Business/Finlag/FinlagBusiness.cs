@@ -513,6 +513,9 @@ namespace Milano.BackEnd.Business.Finlag
             ConsultaClienteLealtadResponse consultaClienteResponse = new ConsultaClienteLealtadResponse();
             List<rInfoClientesCRM> listrenglon = new List<rInfoClientesCRM>();
 
+            
+
+
             ProxyLealtad.RespuestaConsultarCliente info = proxyLealtad.ConsultarCliente(
                 consultaClienteLealtadRequest.iiCodigoCliente,
                 consultaClienteLealtadRequest.iiCodigoClienteSistemaCredito,
@@ -528,12 +531,12 @@ namespace Milano.BackEnd.Business.Finlag
                 consultaClienteLealtadRequest.iiCodigoTienda,
                 consultaClienteLealtadRequest.iiCodigoCaja);
 
-            if (info.infoClientesCRMs != null)
-            {
+           
                 consultaClienteResponse.bbCantidadLimitada = info.bCantidadLimitada;
                 consultaClienteResponse.iiCantidadClientes = info.iCantidadClientes;
                 consultaClienteResponse.ssMensajeError = info.sMensajeError;
-
+ if (info.infoClientesCRMs != null)
+            {
                 foreach (var r in info.infoClientesCRMs)
                 {
                     rInfoClientesCRM renglon = new rInfoClientesCRM();
