@@ -251,6 +251,9 @@
     <None Include="Connected Services\ProxyInfoDescuento\Milano.BackEnd.Business.ProxyInfoDescuento.WsPosResponseModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ProxyLealtad\Milano.BackEnd.Business.ProxyLealtad.RespuestaAcumularPuntosODescuentos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ProxyLealtad\Milano.BackEnd.Business.ProxyLealtad.RespuestaConsultarCliente.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

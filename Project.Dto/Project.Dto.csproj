@@ -181,6 +181,8 @@
     <Compile Include="InicioFinDia\AutenticacionOfflineRequest.cs" />
     <Compile Include="InicioFinDia\CapturaLuzRequest.cs" />
     <Compile Include="InicioFinDia\InicioDiaResponse.cs" />
+    <Compile Include="Lealtad\AcumularPuntosDescuentosRequest.cs" />
+    <Compile Include="Lealtad\AcumularPuntosDescuentosResponse.cs" />
     <Compile Include="Lealtad\ConsultaClienteRequest.cs" />
     <Compile Include="Lealtad\ConsultarClienteResponse.cs" />
     <Compile Include="Lealtad\RegistroLealtadRequest.cs" />

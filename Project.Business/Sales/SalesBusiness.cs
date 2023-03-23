@@ -11,6 +11,7 @@ using System.Transactions;
 using Milano.BackEnd.Business;
 using Milano.BackEnd.Business.MM;
 using Milano.BackEnd.Business.ImpresionMM;
+using Milano.BackEnd.Business.Finlag;
 using System.Xml;
 using Milano.BackEnd.Dto.General;
 using System.Net.Mail;
@@ -20,6 +21,8 @@ using Milano.BackEnd.Business.External;
 using System.Configuration;
 using System.IO;
 using Newtonsoft.Json;
+using Milano.BackEnd.Dto.Lealtad;
+using System.Security.Policy;
 
 namespace Milano.BackEnd.Business
 {
@@ -161,32 +164,63 @@ namespace Milano.BackEnd.Business
                     repository.EliminarPromocionesDet(response.FolioOperacion, token.CodeStore, token.CodeBox);
 
                     // Obtener las promociones vigentes
-                    DescuentoPromocionalVenta[] descuentosPromocionalesEncontrados = descuentosPromocionesRepository.ObtenerPromocionesVenta(response.FolioOperacion, token.CodeStore, token.CodeBox);
+                    DescuentoPromocionalVenta[] descuentosPromocionalesEncontrados = descuentosPromocionesRepository.ObtenerPromocionesVenta(response.FolioOperacion, token.CodeStore, token.CodeBox, totalizarVentaRequest.cabeceraVentaRequest.NivelLealtad, totalizarVentaRequest.cabeceraVentaRequest.PrimeraCompraLealtad, (int)totalizarVentaRequest.cabeceraVentaRequest.CodigoClienteLealtad);
 
-                    // Agregar descuentos promocionales existentes en motor de promociones                                    
-                    foreach (DescuentoPromocionalVenta descuentoPromocionalVenta in descuentosPromocionalesEncontrados)
+                    // Verficar si hay venta de lealtad
+                    if ((int)totalizarVentaRequest.cabeceraVentaRequest.CodigoClienteLealtad > 0)
                     {
-                        // Validar si se trata de descuento promocional por linea
-                        if (descuentoPromocionalVenta.Secuencia > 0)
+                        AcumularPuntosDescuentosRequest x = new AcumularPuntosDescuentosRequest();
+                        FinlagBusiness v = new FinlagBusiness(token);
+
+                        // Agregar descuentos promocionales existentes en motor de promociones                                    
+                        foreach (DescuentoPromocionalVenta descuentoPromocionalVenta in descuentosPromocionalesEncontrados)
                         {
-                            if (descuentoPromocionalVenta.DescuentosPromocionalesFormaPago != null && descuentoPromocionalVenta.DescuentosPromocionalesFormaPago.Length > 0)
-                            {
-                                DescuentosPromocionalesPosiblesLinea.Add(descuentoPromocionalVenta);
-                            }
-                            else
-                            {
-                                DescuentosPromocionalesAplicadosLinea.Add(descuentoPromocionalVenta);
-                            }
+                            x.ssFecha = totalizarVentaRequest.cabeceraVentaRequest.FechaLealtad;
+                            x.iiCodigoCliente = (int)totalizarVentaRequest.cabeceraVentaRequest.CodigoClienteLealtad;
+                            x.iiCodigoTienda = token.CodeStore;
+                            x.iiCodigoCaja = token.CodeBox;
+                            x.iiCodigoEmpleado = token.CodeEmployee;
+                            x.ssFolioVenta = totalizarVentaRequest.cabeceraVentaRequest.FolioOperacion;
+                            x.iiCodigoPromocion = descuentoPromocionalVenta.CodigoPromocionAplicado;
+
+                            x.ddVentaSinIVA = 10;
+                            x.ddIVA = 1.16;
+
+                            x.iiTransaccion = descuentoPromocionalVenta.Secuencia;
+
+                            x.ddPuntosAcumulados = 0;
+                            x.ddImporteDescuento = Convert.ToDouble(descuentoPromocionalVenta.ImporteDescuento);
+
+                            v.AcumulaPuntosDescuentoLealtad(x);
                         }
-                        else
+                    }
+                    else
+                    {
+                        // Agregar descuentos promocionales existentes en motor de promociones                                    
+                        foreach (DescuentoPromocionalVenta descuentoPromocionalVenta in descuentosPromocionalesEncontrados)
                         {
-                            if (descuentoPromocionalVenta.DescuentosPromocionalesFormaPago != null && descuentoPromocionalVenta.DescuentosPromocionalesFormaPago.Length > 0)
+                            // Validar si se trata de descuento promocional por linea
+                            if (descuentoPromocionalVenta.Secuencia > 0)
                             {
-                                DescuentosPromocionalesPosiblesVenta.Add(descuentoPromocionalVenta);
+                                if (descuentoPromocionalVenta.DescuentosPromocionalesFormaPago != null && descuentoPromocionalVenta.DescuentosPromocionalesFormaPago.Length > 0)
+                                {
+                                    DescuentosPromocionalesPosiblesLinea.Add(descuentoPromocionalVenta);
+                                }
+                                else
+                                {
+                                    DescuentosPromocionalesAplicadosLinea.Add(descuentoPromocionalVenta);
+                                }
                             }
                             else
                             {
-                                DescuentosPromocionalesAplicadosVenta.Add(descuentoPromocionalVenta);
+                                if (descuentoPromocionalVenta.DescuentosPromocionalesFormaPago != null && descuentoPromocionalVenta.DescuentosPromocionalesFormaPago.Length > 0)
+                                {
+                                    DescuentosPromocionalesPosiblesVenta.Add(descuentoPromocionalVenta);
+                                }
+                                else
+                                {
+                                    DescuentosPromocionalesAplicadosVenta.Add(descuentoPromocionalVenta);
+                                }
                             }
                         }
                     }
@@ -616,14 +650,48 @@ namespace Milano.BackEnd.Business
 
                     result = repository.FinalizarVenta(token.CodeStore, token.CodeBox, token.CodeEmployee, finalizarVentaRequest, "REGULAR");
 
+
                     // Procesamos promociones que generan Cupones                    
-                    CuponPromocionalVenta[] cuponesPromocionalesEncontrados = descuentosPromocionesRepository.ProcesarPromocionesCupones(finalizarVentaRequest.cabeceraVentaRequest.FolioOperacion, token.CodeStore, token.CodeBox);
-                    foreach (var cupon in cuponesPromocionalesEncontrados)
+                    CuponPromocionalVenta[] cuponesPromocionalesEncontrados = descuentosPromocionesRepository.ProcesarPromocionesCupones(finalizarVentaRequest.cabeceraVentaRequest.FolioOperacion, token.CodeStore, token.CodeBox, finalizarVentaRequest.cabeceraVentaRequest.NivelLealtad, finalizarVentaRequest.cabeceraVentaRequest.PrimeraCompraLealtad, (int)finalizarVentaRequest.cabeceraVentaRequest.CodigoClienteLealtad);
+
+
+                    if ((int)finalizarVentaRequest.cabeceraVentaRequest.CodigoClienteLealtad == 0)
                     {
-                        CuponPersistirResponse cuponPersistirResponse = new CuponPersistirResponse();
-                        cuponPersistirResponse = repository.PersistirCuponPromocionalGenerado(cupon);
-                        mensajeVentaFinalizada += "Cupón Generado: " + cupon.MensajeCupon + " $" + cupon.ImporteDescuento + ". ";
+                        foreach (var cupon in cuponesPromocionalesEncontrados)
+                        {
+                            CuponPersistirResponse cuponPersistirResponse = new CuponPersistirResponse();
+                            cuponPersistirResponse = repository.PersistirCuponPromocionalGenerado(cupon);
+                            mensajeVentaFinalizada += "Cupón Generado: " + cupon.MensajeCupon + " $" + cupon.ImporteDescuento + ". ";
+                        }
                     }
+                    else
+                    {
+                        AcumularPuntosDescuentosRequest x = new AcumularPuntosDescuentosRequest();
+                        FinlagBusiness v = new FinlagBusiness(token);
+
+                        foreach (var cupon in cuponesPromocionalesEncontrados)
+                        {
+                            x.ssFecha = finalizarVentaRequest.cabeceraVentaRequest.FechaLealtad;
+                            x.iiCodigoCliente = (int)finalizarVentaRequest.cabeceraVentaRequest.CodigoClienteLealtad;
+                            x.iiCodigoTienda = token.CodeStore;
+                            x.iiCodigoCaja = token.CodeBox;
+                            x.iiCodigoEmpleado = token.CodeEmployee;
+                            x.ssFolioVenta = finalizarVentaRequest.cabeceraVentaRequest.FolioOperacion;
+                            x.iiCodigoPromocion = cupon.CodigoPromocionAplicado;
+
+                            x.ddVentaSinIVA = 10;
+                            x.ddIVA = 1.16;
+
+                            x.iiTransaccion = cupon.Transaccion;
+
+                            x.ddPuntosAcumulados = 0;
+                            x.ddImporteDescuento = Convert.ToDouble(cupon.ImporteDescuento);
+
+                            v.AcumulaPuntosDescuentoLealtad(x);
+                        }
+                    }
+
+                   
 
                     // Procesamos descuentos por mercancía dañada o picos de mercancía
                     descuentoMercanciaDaniadaBusiness.ProcesarDescuentosExternosPicosMercancia(finalizarVentaRequest.FolioVenta);

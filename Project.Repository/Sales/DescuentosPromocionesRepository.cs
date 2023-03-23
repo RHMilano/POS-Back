@@ -10,6 +10,12 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Transactions;
+using Project.Services;
+using Newtonsoft.Json;
+using System.IO;
+using System.Net;
+using Milano.BackEnd.Dto.Lealtad;
+
 namespace Milano.BackEnd.Repository
 {
 
@@ -35,6 +41,7 @@ namespace Milano.BackEnd.Repository
             parameters.Add("@CodigoTienda", codigoTienda);
             parameters.Add("@CodigoCaja", codigoCaja);
             List<DescuentoPromocionalVenta> list = new List<DescuentoPromocionalVenta>();
+
             foreach (var item in data.GetDataReader("sp_vanti_prmChecarPromocionesMMPrimeraCompra", parameters))
             {
                 int codigoPromocionAplicado = Convert.ToInt32(item.GetValue(0));
@@ -49,12 +56,14 @@ namespace Milano.BackEnd.Repository
                     descuentoPromocional.PorcentajeDescuento = inspector.TruncarValor(Convert.ToDecimal(item.GetValue(6)));
                     descuentoPromocional.CodigoRazonDescuento = Convert.ToInt32(item.GetValue(7));
                     descuentoPromocional.DescuentosPromocionalesFormaPago = new DescuentoPromocionalFormaPago[] { };
+
                     if (!item.IsDBNull(4))
                     {
                         DescuentoPromocionalFormaPago decuentoPromocionalFormaPago = new DescuentoPromocionalFormaPago();
                         decuentoPromocionalFormaPago.codigoFormaPago = Convert.ToString(item.GetValue(4));
                         descuentoPromocional.DescuentosPromocionalesFormaPago.ToList().Add(decuentoPromocionalFormaPago);
                     }
+
                     list.Add(descuentoPromocional);
                 }
                 else
@@ -77,15 +86,28 @@ namespace Milano.BackEnd.Repository
         /// <param name="codigoTienda">Código de tienda</param>      
         /// <param name="codigoCaja">Código de caja</param>           
         /// <returns>Resultado de la operación</returns>
-        public DescuentoPromocionalVenta[] ObtenerPromocionesVenta(string folioVenta, int codigoTienda, int codigoCaja)
+        /// 
+        //public DescuentoPromocionalVenta[] ObtenerPromocionesVenta(string folioVenta, int codigoTienda, int codigoCaja, string tipoCliente, bool primeraCompra, int codigoClienteLealtad)
+        public DescuentoPromocionalVenta[] ObtenerPromocionesVenta(string folioVenta, int codigoTienda, int codigoCaja, string tipoCliente, bool primeraCompra, int codigoClienteLealtad)
         {
+            string spEjecutar = "sp_vanti_prmChecarPromocionesVenta";
+
             Inspector inspector = new Inspector();
             var parameters = new Dictionary<string, object>();
             parameters.Add("@FolioVenta", folioVenta);
             parameters.Add("@CodigoTienda", codigoTienda);
             parameters.Add("@CodigoCaja", codigoCaja);
+
+            if (codigoClienteLealtad != 0)
+            {
+                parameters.Add("@tipoCliente", tipoCliente);
+                parameters.Add("@primeraCompra", primeraCompra == true ? 1 : 0);
+                spEjecutar = "sp_prmChecarPromocionesLealtad";
+            }
+
             List<DescuentoPromocionalVenta> lista = new List<DescuentoPromocionalVenta>();
-            var prueba = data.GetDataReader("[dbo].[sp_vanti_prmChecarPromocionesVenta]", parameters);
+            var prueba = data.GetDataReader(spEjecutar, parameters);
+
             foreach (var item in prueba)
             {
                 int grupoFormaPagoAsociada = 0;
@@ -97,6 +119,7 @@ namespace Milano.BackEnd.Repository
                 descuentoPromocional.PorcentajeDescuento = inspector.TruncarValor(Convert.ToDecimal(item.GetValue(6)));
                 descuentoPromocional.CodigoRazonDescuento = Convert.ToInt32(item.GetValue(7));
                 descuentoPromocional.Secuencia = 0;
+
                 if (!item.IsDBNull(5))
                 {
                     descuentoPromocional.Secuencia = Convert.ToInt32(item.GetValue(5));
@@ -121,6 +144,7 @@ namespace Milano.BackEnd.Repository
                 }
                 lista.Add(descuentoPromocional);
             }
+
             return lista.ToArray();
         }
 
@@ -131,15 +155,25 @@ namespace Milano.BackEnd.Repository
         /// <param name="codigoTienda">Código de tienda</param>      
         /// <param name="codigoCaja">Código de caja</param>           
         /// <returns>Resultado de la operación</returns>
-        public CuponPromocionalVenta[] ProcesarPromocionesCupones(string folioVenta, int codigoTienda, int codigoCaja)
+        public CuponPromocionalVenta[] ProcesarPromocionesCupones(string folioVenta, int codigoTienda, int codigoCaja, string nivel, bool primeraCompra, int codigoClienteLealtad)
         {
+            string spEjecutar = "sp_vanti_prmChecarPromocionesCupones";
             Inspector inspector = new Inspector();
             var parameters = new Dictionary<string, object>();
             parameters.Add("@FolioVenta", folioVenta);
             parameters.Add("@CodigoTienda", codigoTienda);
             parameters.Add("@CodigoCaja", codigoCaja);
+
+            if (codigoClienteLealtad != 0)
+            {
+                parameters.Add("@tipoCliente", nivel);
+                parameters.Add("@primeraCompra", primeraCompra == true ? 1 : 0);
+                spEjecutar = "sp_prmChecarPromocionesPuntosLealtad";
+            }
+
+
             List<CuponPromocionalVenta> listaCupones = new List<CuponPromocionalVenta>();
-            foreach (var item in data.GetDataReader("[dbo].[sp_vanti_prmChecarPromocionesCupones]", parameters))
+            foreach (var item in data.GetDataReader(spEjecutar, parameters))
             {
                 CuponPromocionalVenta descuentoPromocional = new CuponPromocionalVenta();
                 descuentoPromocional.FechaCreacion = Convert.ToDateTime(item.GetValue(0));

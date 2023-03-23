@@ -460,6 +460,7 @@ namespace Milano.BackEnd.Business.Finlag
             });
         }
 
+
         private RegistroLealtadResponse RegistrarClienteLealtadInternal(RegistroLealtadRequest registroLealtadRequest)
         {
             RegistroLealtadResponse registroLealtadResponse = new RegistroLealtadResponse();
@@ -494,6 +495,40 @@ namespace Milano.BackEnd.Business.Finlag
         }
 
 
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="acumularPuntosDescuentosRequest"></param>
+        /// <returns></returns>
+        public AcumularPuntosDescuentosResponse AcumulaPuntosDescuentoLealtad(AcumularPuntosDescuentosRequest acumularPuntosDescuentosRequest)
+        {
+            AcumularPuntosDescuentosResponse acumularPuntosDescuentosResponse = new AcumularPuntosDescuentosResponse();
+
+            ProxyLealtad.RespuestaAcumularPuntosODescuentos xxx = proxyLealtad.AcumularPuntosODescuentos(
+                acumularPuntosDescuentosRequest.ssFecha,
+                acumularPuntosDescuentosRequest.iiCodigoCliente,
+                acumularPuntosDescuentosRequest.iiCodigoTienda,
+                acumularPuntosDescuentosRequest.iiCodigoCaja,
+                acumularPuntosDescuentosRequest.iiCodigoEmpleado,
+                acumularPuntosDescuentosRequest.ssFolioVenta,
+                acumularPuntosDescuentosRequest.iiCodigoPromocion,
+                acumularPuntosDescuentosRequest.ddVentaSinIVA,
+                acumularPuntosDescuentosRequest.ddIVA,
+                acumularPuntosDescuentosRequest.iiTransaccion,
+                acumularPuntosDescuentosRequest.ddPuntosAcumulados,
+                acumularPuntosDescuentosRequest.ddImporteDescuento
+           );
+
+            acumularPuntosDescuentosResponse.ssMensaje = xxx.sMensaje;
+            acumularPuntosDescuentosResponse.bbError = xxx.bError;
+
+            return acumularPuntosDescuentosResponse;
+
+        }
+
+
         /// <summary>
         /// Registrar cliente de lealtad para credito
         /// </summary>
@@ -513,9 +548,6 @@ namespace Milano.BackEnd.Business.Finlag
             ConsultaClienteLealtadResponse consultaClienteResponse = new ConsultaClienteLealtadResponse();
             List<rInfoClientesCRM> listrenglon = new List<rInfoClientesCRM>();
 
-            
-
-
             ProxyLealtad.RespuestaConsultarCliente info = proxyLealtad.ConsultarCliente(
                 consultaClienteLealtadRequest.iiCodigoCliente,
                 consultaClienteLealtadRequest.iiCodigoClienteSistemaCredito,
@@ -531,11 +563,11 @@ namespace Milano.BackEnd.Business.Finlag
                 consultaClienteLealtadRequest.iiCodigoTienda,
                 consultaClienteLealtadRequest.iiCodigoCaja);
 
-           
-                consultaClienteResponse.bbCantidadLimitada = info.bCantidadLimitada;
-                consultaClienteResponse.iiCantidadClientes = info.iCantidadClientes;
-                consultaClienteResponse.ssMensajeError = info.sMensajeError;
- if (info.infoClientesCRMs != null)
+            consultaClienteResponse.bbCantidadLimitada = info.bCantidadLimitada;
+            consultaClienteResponse.iiCantidadClientes = info.iCantidadClientes;
+            consultaClienteResponse.ssMensajeError = info.sMensajeError;
+
+            if (info.infoClientesCRMs != null)
             {
                 foreach (var r in info.infoClientesCRMs)
                 {
@@ -565,31 +597,7 @@ namespace Milano.BackEnd.Business.Finlag
 
         }
 
-        //private List<ConsultaClienteLealtadResponse> ConvertToTableConsultaLealtad(DataTable dt)
-        //{
-        //    var convertedList = (from rw in dt.AsEnumerable()
-        //                         select new ConsultaClienteLealtadResponse()
-        //                         {
-        //                             iiCodigoCliente = Convert.ToInt32(rw["iCodigoCliente"]),
-        //                             iiCodigoClienteSistemaCredito = Convert.ToInt32(rw["iCodigoClienteSistemaCredito"]),
-        //                             iiCodigoEmpleado = Convert.ToInt32(rw["iCodigoEmpleado"]),
-        //                             iiCodigoClienteWeb = Convert.ToInt32(rw["iCodigoClienteWeb"]),
-        //                             ssNivel = Convert.ToString(rw["sNivel"]),
-        //                             bbPrimeraCompra = Convert.ToBoolean(rw["bPrimeraCompra"]),
-        //                             ssTelefono = Convert.ToString(rw["sTelefono"]),
-        //                             ssPaterno = Convert.ToString(rw["sPaterno"]),
-        //                             ssMaterno = Convert.ToString(rw["sMaterno"]),
-        //                             ssNombre = Convert.ToString(rw["sNombre"]),
-        //                             ssGenero = Convert.ToString(rw["sGenero"]),
-        //                             ssFechaNacimiento = Convert.ToString(rw["sFechaNacimiento"]),
-        //                             ddSaldo = Convert.ToDouble(rw["dSaldo"]),
-        //                             ssFechaRegistro = Convert.ToString(rw["sFechaRegistro"]),
-        //                             ssEmail = Convert.ToString(rw["sEmail"])
-        //                         }).ToList();
-
-        //    return convertedList;
-        //}
-
+      
         private List<ValidaValeResult> test(DataTable dt)
         {
             var convertedList = (from rw in dt.AsEnumerable()

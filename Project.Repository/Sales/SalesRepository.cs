@@ -538,7 +538,11 @@ namespace Milano.BackEnd.Repository
                 }
                 else
                 {
-                    int cantidadPromociones = (new DescuentosPromocionesRepository().ObtenerPromocionesVenta(totalizarVentaRequest.cabeceraVentaRequest.FolioOperacion, codeStore, codeBox)).Length;
+
+
+                   int cantidadPromociones = (new DescuentosPromocionesRepository().ObtenerPromocionesVenta(totalizarVentaRequest.cabeceraVentaRequest.FolioOperacion, codeStore, codeBox, totalizarVentaRequest.cabeceraVentaRequest.NivelLealtad, totalizarVentaRequest.cabeceraVentaRequest.PrimeraCompraLealtad, (int)totalizarVentaRequest.cabeceraVentaRequest.CodigoClienteLealtad)).Length;
+
+                    //int cantidadPromociones = (new DescuentosPromocionesRepository().ObtenerPromocionesVenta(totalizarVentaRequest.cabeceraVentaRequest.FolioOperacion, codeStore, codeBox)).Length;
                     if ((totalizarVentaRequest.cabeceraVentaRequest.ImporteVentaNetoOriginal >= totalizarVentaRequest.cabeceraVentaRequest.ImporteVentaNeto)
                         && (cantidadPromociones == 0))
                     {

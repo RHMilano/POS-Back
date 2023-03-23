@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
 using System.Text;
 
@@ -79,6 +80,43 @@ namespace Milano.BackEnd.Dto.Sales
         /// </summary>
         [DataMember(Name = "codigoEmpleadoVendedor")]
         public int CodigoEmpleadoVendedor { get; set; }
+
+
+
+
+        /// <summary>
+        /// Codigo del cliente de lealtad
+        /// </summary>
+        [DataMember(Name = "codigoClienteLealtad")]
+        public int? CodigoClienteLealtad { get; set; }
+
+        /// <summary>
+        /// Codigo del cliente del sistema credito de lealtad
+        /// </summary>
+        [DataMember(Name = "codigoClienteSistemaCredito")]
+        public int? CodigoClienteSistemaCredito { get; set; }
+
+        /// <summary>
+        /// Primera compra para de lealtad
+        /// </summary>
+        [DataMember(Name = "primeraCompraLealtad")]
+        public bool PrimeraCompraLealtad { get; set; }
+
+        /// <summary>
+        /// Indicador de nivel de lealtad
+        /// </summary>
+        [DataMember(Name = "nivelLealtad")]
+        public string NivelLealtad { get; set; }
+
+        /// <summary>
+        /// Indicador de nivel de lealtad
+        /// </summary>
+        [DataMember(Name = "fechaLealtad")]
+        public string FechaLealtad { get; set; }
+
+
+
+
 
         /// <summary>
         /// Número de nómina del empleado en caso de una Venta Empleado
