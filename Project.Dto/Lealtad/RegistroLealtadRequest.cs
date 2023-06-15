@@ -14,6 +14,13 @@ namespace Milano.BackEnd.Dto.Lealtad
     [DataContract]
     public class RegistroLealtadRequest
     {
+
+        /// <summary>
+        /// Token para la peticion de lealtad
+        /// </summary>
+        [DataMember(Name = "sToken")]
+        public string ssToken { get; set; }
+
         /// <summary>
         /// Codigo del cliente de sistema de credito
         /// </summary>

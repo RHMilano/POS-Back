@@ -79,5 +79,18 @@ namespace Milano.BackEnd.Dto.Sales
         [DataMember(Name = "mensajeCupon")]
         public string MensajeCupon { get; set; }
 
+        /// <summary>
+        /// Mercancia sin IVA lealtad
+        /// </summary>
+        [DataMember(Name = "mercanciaSinIva")]
+        public double MercanciaSinIva { get; set; }
+
+
+        /// <summary>
+        /// IVA Lealtad
+        /// </summary>
+        [DataMember(Name = "iva")]
+        public double Iva { get; set; }
+
     }
 }

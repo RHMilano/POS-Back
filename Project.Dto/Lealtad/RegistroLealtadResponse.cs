@@ -13,6 +13,11 @@ namespace Milano.BackEnd.Dto.Lealtad
     [DataContract]
     public class RegistroLealtadResponse
     {
+
+     
+
+
+
         /// <summary>
         /// Indica si hubo algun error
         /// </summary>

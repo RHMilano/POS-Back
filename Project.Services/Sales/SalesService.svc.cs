@@ -139,6 +139,16 @@ namespace Project.Services.Sales
         }
 
 
+        [OperationContract]
+        [WebInvoke(Method = "POST", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare, UriTemplate = "/redencionPuntosLealtad")]
+        public ResponseBussiness<OperationResponse> AplicarRedencionPuntosLealtadService(RedencionPuntosLealtadRequest redencionPuntosLealtadRequest)
+        {
+            TokenDto token = new TokenService().Get();
+            ResponseBussiness<OperationResponse> response = new SalesBusiness(token).AplicarRedencionPuntosLealtad(redencionPuntosLealtadRequest);
+            return response;
+        }
+
+
 
         /// <summary>
         /// OCG: Enviar solicitud de autorizacion para el gerente

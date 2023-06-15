@@ -257,7 +257,19 @@
     <None Include="Connected Services\ProxyLealtad\Milano.BackEnd.Business.ProxyLealtad.RespuestaConsultarCliente.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ProxyLealtad\Milano.BackEnd.Business.ProxyLealtad.RespuestaConsultarPuntos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyLealtad\Milano.BackEnd.Business.ProxyLealtad.RespuestaIniciarSesion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyLealtad\Milano.BackEnd.Business.ProxyLealtad.RespuestaRedimirPuntos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ProxyLealtad\Milano.BackEnd.Business.ProxyLealtad.RespuestaRegistrarCliente.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyLealtad\Milano.BackEnd.Business.ProxyLealtad.RespuestaSucursalesCercanas.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ProxyLealtad\wsLealtad.wsdl" />

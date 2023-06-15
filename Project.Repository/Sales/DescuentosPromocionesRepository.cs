@@ -79,6 +79,8 @@ namespace Milano.BackEnd.Repository
             return list.ToArray();
         }
 
+
+
         /// <summary>
         /// Obtiene las promociones que son aplicables a la venta
         /// </summary>
@@ -86,10 +88,10 @@ namespace Milano.BackEnd.Repository
         /// <param name="codigoTienda">Código de tienda</param>      
         /// <param name="codigoCaja">Código de caja</param>           
         /// <returns>Resultado de la operación</returns>
-        /// 
-        //public DescuentoPromocionalVenta[] ObtenerPromocionesVenta(string folioVenta, int codigoTienda, int codigoCaja, string tipoCliente, bool primeraCompra, int codigoClienteLealtad)
-        public DescuentoPromocionalVenta[] ObtenerPromocionesVenta(string folioVenta, int codigoTienda, int codigoCaja, string tipoCliente, bool primeraCompra, int codigoClienteLealtad)
+        public DescuentoPromocionalVenta[] ObtenerPromocionesVenta(string folioVenta, int codigoTienda, int codigoCaja, string nivel, bool primeraCompra, int codigoClienteLealtad)
         {
+
+          
             string spEjecutar = "sp_vanti_prmChecarPromocionesVenta";
 
             Inspector inspector = new Inspector();
@@ -100,14 +102,14 @@ namespace Milano.BackEnd.Repository
 
             if (codigoClienteLealtad != 0)
             {
-                parameters.Add("@tipoCliente", tipoCliente);
+                parameters.Add("@tipoCliente", nivel);
                 parameters.Add("@primeraCompra", primeraCompra == true ? 1 : 0);
-                spEjecutar = "sp_prmChecarPromocionesLealtad";
+                spEjecutar = "sp_prmChecarPromocionesPuntosLealtad";
             }
 
             List<DescuentoPromocionalVenta> lista = new List<DescuentoPromocionalVenta>();
-            var prueba = data.GetDataReader(spEjecutar, parameters);
 
+            var prueba = data.GetDataReader(spEjecutar, parameters);
             foreach (var item in prueba)
             {
                 int grupoFormaPagoAsociada = 0;
@@ -118,8 +120,8 @@ namespace Milano.BackEnd.Repository
                 descuentoPromocional.CodigoPromocionOrden = Convert.ToInt32(item.GetValue(3));
                 descuentoPromocional.PorcentajeDescuento = inspector.TruncarValor(Convert.ToDecimal(item.GetValue(6)));
                 descuentoPromocional.CodigoRazonDescuento = Convert.ToInt32(item.GetValue(7));
-                descuentoPromocional.Secuencia = 0;
 
+                descuentoPromocional.Secuencia = 0;
                 if (!item.IsDBNull(5))
                 {
                     descuentoPromocional.Secuencia = Convert.ToInt32(item.GetValue(5));
@@ -144,9 +146,9 @@ namespace Milano.BackEnd.Repository
                 }
                 lista.Add(descuentoPromocional);
             }
-
             return lista.ToArray();
         }
+
 
         /// <summary>
         /// Procesa las promociones que son aplicables a la venta por concepto de cupones
@@ -173,7 +175,7 @@ namespace Milano.BackEnd.Repository
 
 
             List<CuponPromocionalVenta> listaCupones = new List<CuponPromocionalVenta>();
-            foreach (var item in data.GetDataReader(spEjecutar, parameters))
+            foreach (var item in data.GetDataReader(spEjecutar, parameters))         
             {
                 CuponPromocionalVenta descuentoPromocional = new CuponPromocionalVenta();
                 descuentoPromocional.FechaCreacion = Convert.ToDateTime(item.GetValue(0));
@@ -186,8 +188,19 @@ namespace Milano.BackEnd.Repository
                 descuentoPromocional.FechaCancelacion = Convert.ToDateTime(item.GetValue(7));
                 descuentoPromocional.ImporteDescuento = inspector.TruncarValor(Convert.ToDecimal(item.GetValue(8)));
                 descuentoPromocional.Saldo = inspector.TruncarValor(Convert.ToDecimal(item.GetValue(9)));
-                descuentoPromocional.MensajeCupon = Convert.ToString(item.GetValue(10));
-                listaCupones.Add(descuentoPromocional);
+
+                if (codigoClienteLealtad != 0)
+                {
+                    descuentoPromocional.MercanciaSinIva = Convert.ToDouble(item.GetValue(10));
+                    descuentoPromocional.Iva = Convert.ToDouble(item.GetValue(11));
+                    descuentoPromocional.MensajeCupon = Convert.ToString(item.GetValue(12));
+                }
+                else {
+                    descuentoPromocional.MensajeCupon = Convert.ToString(item.GetValue(10));
+                }
+
+
+                    listaCupones.Add(descuentoPromocional);
             }
             return listaCupones.ToArray();
         }

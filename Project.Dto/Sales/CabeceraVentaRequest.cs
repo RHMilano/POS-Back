@@ -108,6 +108,8 @@ namespace Milano.BackEnd.Dto.Sales
         [DataMember(Name = "nivelLealtad")]
         public string NivelLealtad { get; set; }
 
+      
+
         /// <summary>
         /// Indicador de nivel de lealtad
         /// </summary>

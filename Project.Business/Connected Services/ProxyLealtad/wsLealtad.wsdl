@@ -2,9 +2,114 @@
 <wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SucursalesCercanas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dLatitud" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="dLongitud" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="iMetrosMaximos" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SucursalesCercanasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SucursalesCercanasResult" type="tns:RespuestaSucursalesCercanas" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RespuestaSucursalesCercanas">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="sMensajeError" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iCantidadDetalles" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="infoSucursales" type="tns:ArrayOfInfoSucursal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfInfoSucursal">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="InfoSucursal" nillable="true" type="tns:InfoSucursal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="InfoSucursal">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="sDescripcionTienda" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dLatitud" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="dLongitud" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="sMarca" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iDistanciaEnMetros" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="sDireccion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sColonia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sCiudad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sEstado" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConsultarPuntos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iCodigoCliente" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarPuntosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarPuntosResult" type="tns:RespuestaConsultarPuntos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RespuestaConsultarPuntos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="sMensajeError" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iCantidadDetalles" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="infoPuntosCRM" type="tns:ArrayOfInfoPuntosCRM" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfInfoPuntosCRM">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="InfoPuntosCRM" nillable="true" type="tns:InfoPuntosCRM" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="InfoPuntosCRM">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="dFechaSinHora" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="sHora" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dPuntos" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="sDescripcion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RedimirPuntos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sCodigoBarras" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dMonto" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="iCodigoTienda" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iCodigoempleado" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iCodigoCaja" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iTransaccion" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFolioVenta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RedimirPuntosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RedimirPuntosResult" type="tns:RespuestaRedimirPuntos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RespuestaRedimirPuntos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="sMensaje" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="bError" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="sSesion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="RegistrarCliente">
         <s:complexType>
           <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sToken" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="iCodigoClienteSistemaCredito" type="s:int" />
             <s:element minOccurs="1" maxOccurs="1" name="iCodigoEmpleado" type="s:int" />
             <s:element minOccurs="1" maxOccurs="1" name="iCodigoClienteWeb" type="s:int" />
@@ -53,6 +158,7 @@
             <s:element minOccurs="1" maxOccurs="1" name="iTransaccion" type="s:int" />
             <s:element minOccurs="1" maxOccurs="1" name="dPuntosAcumulados" type="s:double" />
             <s:element minOccurs="1" maxOccurs="1" name="dImporteDescuento" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="iCodigoTipoPuntos" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -127,8 +233,114 @@
           <s:element minOccurs="0" maxOccurs="1" name="sEmail" type="s:string" />
         </s:sequence>
       </s:complexType>
+      <s:element name="ObtenerToken">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerTokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerTokenResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EstablecerContraseña">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iCodigoCliente" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTelefono" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPaterno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMaterno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sNombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sFechaNacimiento" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EstablecerContraseñaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EstablecerContraseñaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IniciarSesion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sToken" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="iCodigoCliente" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iCodigoClienteCredito" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iCodigoClienteWeb" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iCodigoEmpleadoMilano" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTelefono" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCorreo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IniciarSesionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IniciarSesionResult" type="tns:RespuestaIniciarSesion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RespuestaIniciarSesion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="sMensajeError" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iCodigoClienteCRM" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="iCodigoClienteSistemaCredito" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="sNivel" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="mSaldoActual" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="dFechaNacimiento" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="sGenero" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sNombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sTelefono" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sEmail" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="iPrimeraCompra" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="EnviarSMS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sToken" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTelefono" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMensaje" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnviarSMSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EnviarSMSResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="SucursalesCercanasSoapIn">
+    <wsdl:part name="parameters" element="tns:SucursalesCercanas" />
+  </wsdl:message>
+  <wsdl:message name="SucursalesCercanasSoapOut">
+    <wsdl:part name="parameters" element="tns:SucursalesCercanasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarPuntosSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarPuntos" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarPuntosSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarPuntosResponse" />
+  </wsdl:message>
+  <wsdl:message name="RedimirPuntosSoapIn">
+    <wsdl:part name="parameters" element="tns:RedimirPuntos" />
+  </wsdl:message>
+  <wsdl:message name="RedimirPuntosSoapOut">
+    <wsdl:part name="parameters" element="tns:RedimirPuntosResponse" />
+  </wsdl:message>
   <wsdl:message name="RegistrarClienteSoapIn">
     <wsdl:part name="parameters" element="tns:RegistrarCliente" />
   </wsdl:message>
@@ -147,7 +359,43 @@
   <wsdl:message name="ConsultarClienteSoapOut">
     <wsdl:part name="parameters" element="tns:ConsultarClienteResponse" />
   </wsdl:message>
+  <wsdl:message name="ObtenerTokenSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerToken" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerTokenSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="EstablecerContraseñaSoapIn">
+    <wsdl:part name="parameters" element="tns:EstablecerContraseña" />
+  </wsdl:message>
+  <wsdl:message name="EstablecerContraseñaSoapOut">
+    <wsdl:part name="parameters" element="tns:EstablecerContraseñaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IniciarSesionSoapIn">
+    <wsdl:part name="parameters" element="tns:IniciarSesion" />
+  </wsdl:message>
+  <wsdl:message name="IniciarSesionSoapOut">
+    <wsdl:part name="parameters" element="tns:IniciarSesionResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnviarSMSSoapIn">
+    <wsdl:part name="parameters" element="tns:EnviarSMS" />
+  </wsdl:message>
+  <wsdl:message name="EnviarSMSSoapOut">
+    <wsdl:part name="parameters" element="tns:EnviarSMSResponse" />
+  </wsdl:message>
   <wsdl:portType name="wsLealtadSoap">
+    <wsdl:operation name="SucursalesCercanas">
+      <wsdl:input message="tns:SucursalesCercanasSoapIn" />
+      <wsdl:output message="tns:SucursalesCercanasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPuntos">
+      <wsdl:input message="tns:ConsultarPuntosSoapIn" />
+      <wsdl:output message="tns:ConsultarPuntosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RedimirPuntos">
+      <wsdl:input message="tns:RedimirPuntosSoapIn" />
+      <wsdl:output message="tns:RedimirPuntosSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="RegistrarCliente">
       <wsdl:input message="tns:RegistrarClienteSoapIn" />
       <wsdl:output message="tns:RegistrarClienteSoapOut" />
@@ -160,9 +408,52 @@
       <wsdl:input message="tns:ConsultarClienteSoapIn" />
       <wsdl:output message="tns:ConsultarClienteSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="ObtenerToken">
+      <wsdl:input message="tns:ObtenerTokenSoapIn" />
+      <wsdl:output message="tns:ObtenerTokenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EstablecerContraseña">
+      <wsdl:input message="tns:EstablecerContraseñaSoapIn" />
+      <wsdl:output message="tns:EstablecerContraseñaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IniciarSesion">
+      <wsdl:input message="tns:IniciarSesionSoapIn" />
+      <wsdl:output message="tns:IniciarSesionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnviarSMS">
+      <wsdl:input message="tns:EnviarSMSSoapIn" />
+      <wsdl:output message="tns:EnviarSMSSoapOut" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="wsLealtadSoap" type="tns:wsLealtadSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SucursalesCercanas">
+      <soap:operation soapAction="http://tempuri.org/SucursalesCercanas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPuntos">
+      <soap:operation soapAction="http://tempuri.org/ConsultarPuntos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RedimirPuntos">
+      <soap:operation soapAction="http://tempuri.org/RedimirPuntos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="RegistrarCliente">
       <soap:operation soapAction="http://tempuri.org/RegistrarCliente" style="document" />
       <wsdl:input>
@@ -190,9 +481,72 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ObtenerToken">
+      <soap:operation soapAction="http://tempuri.org/ObtenerToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EstablecerContraseña">
+      <soap:operation soapAction="http://tempuri.org/EstablecerContraseña" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IniciarSesion">
+      <soap:operation soapAction="http://tempuri.org/IniciarSesion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnviarSMS">
+      <soap:operation soapAction="http://tempuri.org/EnviarSMS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="wsLealtadSoap12" type="tns:wsLealtadSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SucursalesCercanas">
+      <soap12:operation soapAction="http://tempuri.org/SucursalesCercanas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarPuntos">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarPuntos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RedimirPuntos">
+      <soap12:operation soapAction="http://tempuri.org/RedimirPuntos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="RegistrarCliente">
       <soap12:operation soapAction="http://tempuri.org/RegistrarCliente" style="document" />
       <wsdl:input>
@@ -213,6 +567,42 @@
     </wsdl:operation>
     <wsdl:operation name="ConsultarCliente">
       <soap12:operation soapAction="http://tempuri.org/ConsultarCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerToken">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EstablecerContraseña">
+      <soap12:operation soapAction="http://tempuri.org/EstablecerContraseña" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IniciarSesion">
+      <soap12:operation soapAction="http://tempuri.org/IniciarSesion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnviarSMS">
+      <soap12:operation soapAction="http://tempuri.org/EnviarSMS" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

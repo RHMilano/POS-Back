@@ -15,6 +15,495 @@ namespace Milano.BackEnd.Business.ProxyLealtad {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RespuestaSucursalesCercanas", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class RespuestaSucursalesCercanas : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string sMensajeErrorField;
+        
+        private int iCantidadDetallesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Milano.BackEnd.Business.ProxyLealtad.InfoSucursal[] infoSucursalesField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string sMensajeError {
+            get {
+                return this.sMensajeErrorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.sMensajeErrorField, value) != true)) {
+                    this.sMensajeErrorField = value;
+                    this.RaisePropertyChanged("sMensajeError");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public int iCantidadDetalles {
+            get {
+                return this.iCantidadDetallesField;
+            }
+            set {
+                if ((this.iCantidadDetallesField.Equals(value) != true)) {
+                    this.iCantidadDetallesField = value;
+                    this.RaisePropertyChanged("iCantidadDetalles");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public Milano.BackEnd.Business.ProxyLealtad.InfoSucursal[] infoSucursales {
+            get {
+                return this.infoSucursalesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.infoSucursalesField, value) != true)) {
+                    this.infoSucursalesField = value;
+                    this.RaisePropertyChanged("infoSucursales");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="InfoSucursal", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class InfoSucursal : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string sDescripcionTiendaField;
+        
+        private decimal dLatitudField;
+        
+        private decimal dLongitudField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string sMarcaField;
+        
+        private int iDistanciaEnMetrosField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string sDireccionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string sColoniaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string sCiudadField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string sEstadoField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string sDescripcionTienda {
+            get {
+                return this.sDescripcionTiendaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.sDescripcionTiendaField, value) != true)) {
+                    this.sDescripcionTiendaField = value;
+                    this.RaisePropertyChanged("sDescripcionTienda");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public decimal dLatitud {
+            get {
+                return this.dLatitudField;
+            }
+            set {
+                if ((this.dLatitudField.Equals(value) != true)) {
+                    this.dLatitudField = value;
+                    this.RaisePropertyChanged("dLatitud");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public decimal dLongitud {
+            get {
+                return this.dLongitudField;
+            }
+            set {
+                if ((this.dLongitudField.Equals(value) != true)) {
+                    this.dLongitudField = value;
+                    this.RaisePropertyChanged("dLongitud");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string sMarca {
+            get {
+                return this.sMarcaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.sMarcaField, value) != true)) {
+                    this.sMarcaField = value;
+                    this.RaisePropertyChanged("sMarca");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public int iDistanciaEnMetros {
+            get {
+                return this.iDistanciaEnMetrosField;
+            }
+            set {
+                if ((this.iDistanciaEnMetrosField.Equals(value) != true)) {
+                    this.iDistanciaEnMetrosField = value;
+                    this.RaisePropertyChanged("iDistanciaEnMetros");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string sDireccion {
+            get {
+                return this.sDireccionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.sDireccionField, value) != true)) {
+                    this.sDireccionField = value;
+                    this.RaisePropertyChanged("sDireccion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string sColonia {
+            get {
+                return this.sColoniaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.sColoniaField, value) != true)) {
+                    this.sColoniaField = value;
+                    this.RaisePropertyChanged("sColonia");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string sCiudad {
+            get {
+                return this.sCiudadField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.sCiudadField, value) != true)) {
+                    this.sCiudadField = value;
+                    this.RaisePropertyChanged("sCiudad");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        public string sEstado {
+            get {
+                return this.sEstadoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.sEstadoField, value) != true)) {
+                    this.sEstadoField = value;
+                    this.RaisePropertyChanged("sEstado");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RespuestaConsultarPuntos", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class RespuestaConsultarPuntos : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string sMensajeErrorField;
+        
+        private int iCantidadDetallesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Milano.BackEnd.Business.ProxyLealtad.InfoPuntosCRM[] infoPuntosCRMField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string sMensajeError {
+            get {
+                return this.sMensajeErrorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.sMensajeErrorField, value) != true)) {
+                    this.sMensajeErrorField = value;
+                    this.RaisePropertyChanged("sMensajeError");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public int iCantidadDetalles {
+            get {
+                return this.iCantidadDetallesField;
+            }
+            set {
+                if ((this.iCantidadDetallesField.Equals(value) != true)) {
+                    this.iCantidadDetallesField = value;
+                    this.RaisePropertyChanged("iCantidadDetalles");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public Milano.BackEnd.Business.ProxyLealtad.InfoPuntosCRM[] infoPuntosCRM {
+            get {
+                return this.infoPuntosCRMField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.infoPuntosCRMField, value) != true)) {
+                    this.infoPuntosCRMField = value;
+                    this.RaisePropertyChanged("infoPuntosCRM");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="InfoPuntosCRM", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class InfoPuntosCRM : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private System.DateTime dFechaSinHoraField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string sHoraField;
+        
+        private decimal dPuntosField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string sDescripcionField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public System.DateTime dFechaSinHora {
+            get {
+                return this.dFechaSinHoraField;
+            }
+            set {
+                if ((this.dFechaSinHoraField.Equals(value) != true)) {
+                    this.dFechaSinHoraField = value;
+                    this.RaisePropertyChanged("dFechaSinHora");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string sHora {
+            get {
+                return this.sHoraField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.sHoraField, value) != true)) {
+                    this.sHoraField = value;
+                    this.RaisePropertyChanged("sHora");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public decimal dPuntos {
+            get {
+                return this.dPuntosField;
+            }
+            set {
+                if ((this.dPuntosField.Equals(value) != true)) {
+                    this.dPuntosField = value;
+                    this.RaisePropertyChanged("dPuntos");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string sDescripcion {
+            get {
+                return this.sDescripcionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.sDescripcionField, value) != true)) {
+                    this.sDescripcionField = value;
+                    this.RaisePropertyChanged("sDescripcion");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RespuestaRedimirPuntos", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class RespuestaRedimirPuntos : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string sMensajeField;
+        
+        private bool bErrorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string sSesionField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string sMensaje {
+            get {
+                return this.sMensajeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.sMensajeField, value) != true)) {
+                    this.sMensajeField = value;
+                    this.RaisePropertyChanged("sMensaje");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public bool bError {
+            get {
+                return this.bErrorField;
+            }
+            set {
+                if ((this.bErrorField.Equals(value) != true)) {
+                    this.bErrorField = value;
+                    this.RaisePropertyChanged("bError");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string sSesion {
+            get {
+                return this.sSesionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.sSesionField, value) != true)) {
+                    this.sSesionField = value;
+                    this.RaisePropertyChanged("sSesion");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="RespuestaRegistrarCliente", Namespace="http://tempuri.org/")]
     [System.SerializableAttribute()]
     public partial class RespuestaRegistrarCliente : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -533,11 +1022,223 @@ namespace Milano.BackEnd.Business.ProxyLealtad {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RespuestaIniciarSesion", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class RespuestaIniciarSesion : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string sMensajeErrorField;
+        
+        private int iCodigoClienteCRMField;
+        
+        private int iCodigoClienteSistemaCreditoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string sNivelField;
+        
+        private decimal mSaldoActualField;
+        
+        private System.DateTime dFechaNacimientoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string sGeneroField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string sNombreField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string sTelefonoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string sEmailField;
+        
+        private int iPrimeraCompraField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string sMensajeError {
+            get {
+                return this.sMensajeErrorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.sMensajeErrorField, value) != true)) {
+                    this.sMensajeErrorField = value;
+                    this.RaisePropertyChanged("sMensajeError");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public int iCodigoClienteCRM {
+            get {
+                return this.iCodigoClienteCRMField;
+            }
+            set {
+                if ((this.iCodigoClienteCRMField.Equals(value) != true)) {
+                    this.iCodigoClienteCRMField = value;
+                    this.RaisePropertyChanged("iCodigoClienteCRM");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public int iCodigoClienteSistemaCredito {
+            get {
+                return this.iCodigoClienteSistemaCreditoField;
+            }
+            set {
+                if ((this.iCodigoClienteSistemaCreditoField.Equals(value) != true)) {
+                    this.iCodigoClienteSistemaCreditoField = value;
+                    this.RaisePropertyChanged("iCodigoClienteSistemaCredito");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string sNivel {
+            get {
+                return this.sNivelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.sNivelField, value) != true)) {
+                    this.sNivelField = value;
+                    this.RaisePropertyChanged("sNivel");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public decimal mSaldoActual {
+            get {
+                return this.mSaldoActualField;
+            }
+            set {
+                if ((this.mSaldoActualField.Equals(value) != true)) {
+                    this.mSaldoActualField = value;
+                    this.RaisePropertyChanged("mSaldoActual");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public System.DateTime dFechaNacimiento {
+            get {
+                return this.dFechaNacimientoField;
+            }
+            set {
+                if ((this.dFechaNacimientoField.Equals(value) != true)) {
+                    this.dFechaNacimientoField = value;
+                    this.RaisePropertyChanged("dFechaNacimiento");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string sGenero {
+            get {
+                return this.sGeneroField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.sGeneroField, value) != true)) {
+                    this.sGeneroField = value;
+                    this.RaisePropertyChanged("sGenero");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string sNombre {
+            get {
+                return this.sNombreField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.sNombreField, value) != true)) {
+                    this.sNombreField = value;
+                    this.RaisePropertyChanged("sNombre");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        public string sTelefono {
+            get {
+                return this.sTelefonoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.sTelefonoField, value) != true)) {
+                    this.sTelefonoField = value;
+                    this.RaisePropertyChanged("sTelefono");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
+        public string sEmail {
+            get {
+                return this.sEmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.sEmailField, value) != true)) {
+                    this.sEmailField = value;
+                    this.RaisePropertyChanged("sEmail");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=10)]
+        public int iPrimeraCompra {
+            get {
+                return this.iPrimeraCompraField;
+            }
+            set {
+                if ((this.iPrimeraCompraField.Equals(value) != true)) {
+                    this.iPrimeraCompraField = value;
+                    this.RaisePropertyChanged("iPrimeraCompra");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ProxyLealtad.wsLealtadSoap")]
     public interface wsLealtadSoap {
         
-        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento sTelefono del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento sToken del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SucursalesCercanas", ReplyAction="*")]
+        Milano.BackEnd.Business.ProxyLealtad.SucursalesCercanasResponse SucursalesCercanas(Milano.BackEnd.Business.ProxyLealtad.SucursalesCercanasRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento sToken del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ConsultarPuntos", ReplyAction="*")]
+        Milano.BackEnd.Business.ProxyLealtad.ConsultarPuntosResponse ConsultarPuntos(Milano.BackEnd.Business.ProxyLealtad.ConsultarPuntosRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento sCodigoBarras del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/RedimirPuntos", ReplyAction="*")]
+        Milano.BackEnd.Business.ProxyLealtad.RedimirPuntosResponse RedimirPuntos(Milano.BackEnd.Business.ProxyLealtad.RedimirPuntosRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento sToken del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/RegistrarCliente", ReplyAction="*")]
         Milano.BackEnd.Business.ProxyLealtad.RegistrarClienteResponse RegistrarCliente(Milano.BackEnd.Business.ProxyLealtad.RegistrarClienteRequest request);
         
@@ -548,6 +1249,266 @@ namespace Milano.BackEnd.Business.ProxyLealtad {
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento sTelefono del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ConsultarCliente", ReplyAction="*")]
         Milano.BackEnd.Business.ProxyLealtad.ConsultarClienteResponse ConsultarCliente(Milano.BackEnd.Business.ProxyLealtad.ConsultarClienteRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento usuario del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ObtenerToken", ReplyAction="*")]
+        Milano.BackEnd.Business.ProxyLealtad.ObtenerTokenResponse ObtenerToken(Milano.BackEnd.Business.ProxyLealtad.ObtenerTokenRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento sToken del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EstablecerContraseña", ReplyAction="*")]
+        Milano.BackEnd.Business.ProxyLealtad.EstablecerContraseñaResponse EstablecerContraseña(Milano.BackEnd.Business.ProxyLealtad.EstablecerContraseñaRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento sToken del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IniciarSesion", ReplyAction="*")]
+        Milano.BackEnd.Business.ProxyLealtad.IniciarSesionResponse IniciarSesion(Milano.BackEnd.Business.ProxyLealtad.IniciarSesionRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento sToken del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EnviarSMS", ReplyAction="*")]
+        Milano.BackEnd.Business.ProxyLealtad.EnviarSMSResponse EnviarSMS(Milano.BackEnd.Business.ProxyLealtad.EnviarSMSRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SucursalesCercanasRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SucursalesCercanas", Namespace="http://tempuri.org/", Order=0)]
+        public Milano.BackEnd.Business.ProxyLealtad.SucursalesCercanasRequestBody Body;
+        
+        public SucursalesCercanasRequest() {
+        }
+        
+        public SucursalesCercanasRequest(Milano.BackEnd.Business.ProxyLealtad.SucursalesCercanasRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class SucursalesCercanasRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string sToken;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public decimal dLatitud;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public decimal dLongitud;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public int iMetrosMaximos;
+        
+        public SucursalesCercanasRequestBody() {
+        }
+        
+        public SucursalesCercanasRequestBody(string sToken, decimal dLatitud, decimal dLongitud, int iMetrosMaximos) {
+            this.sToken = sToken;
+            this.dLatitud = dLatitud;
+            this.dLongitud = dLongitud;
+            this.iMetrosMaximos = iMetrosMaximos;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SucursalesCercanasResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SucursalesCercanasResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Milano.BackEnd.Business.ProxyLealtad.SucursalesCercanasResponseBody Body;
+        
+        public SucursalesCercanasResponse() {
+        }
+        
+        public SucursalesCercanasResponse(Milano.BackEnd.Business.ProxyLealtad.SucursalesCercanasResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class SucursalesCercanasResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public Milano.BackEnd.Business.ProxyLealtad.RespuestaSucursalesCercanas SucursalesCercanasResult;
+        
+        public SucursalesCercanasResponseBody() {
+        }
+        
+        public SucursalesCercanasResponseBody(Milano.BackEnd.Business.ProxyLealtad.RespuestaSucursalesCercanas SucursalesCercanasResult) {
+            this.SucursalesCercanasResult = SucursalesCercanasResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ConsultarPuntosRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ConsultarPuntos", Namespace="http://tempuri.org/", Order=0)]
+        public Milano.BackEnd.Business.ProxyLealtad.ConsultarPuntosRequestBody Body;
+        
+        public ConsultarPuntosRequest() {
+        }
+        
+        public ConsultarPuntosRequest(Milano.BackEnd.Business.ProxyLealtad.ConsultarPuntosRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ConsultarPuntosRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string sToken;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public int iCodigoCliente;
+        
+        public ConsultarPuntosRequestBody() {
+        }
+        
+        public ConsultarPuntosRequestBody(string sToken, int iCodigoCliente) {
+            this.sToken = sToken;
+            this.iCodigoCliente = iCodigoCliente;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ConsultarPuntosResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ConsultarPuntosResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Milano.BackEnd.Business.ProxyLealtad.ConsultarPuntosResponseBody Body;
+        
+        public ConsultarPuntosResponse() {
+        }
+        
+        public ConsultarPuntosResponse(Milano.BackEnd.Business.ProxyLealtad.ConsultarPuntosResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ConsultarPuntosResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public Milano.BackEnd.Business.ProxyLealtad.RespuestaConsultarPuntos ConsultarPuntosResult;
+        
+        public ConsultarPuntosResponseBody() {
+        }
+        
+        public ConsultarPuntosResponseBody(Milano.BackEnd.Business.ProxyLealtad.RespuestaConsultarPuntos ConsultarPuntosResult) {
+            this.ConsultarPuntosResult = ConsultarPuntosResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class RedimirPuntosRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="RedimirPuntos", Namespace="http://tempuri.org/", Order=0)]
+        public Milano.BackEnd.Business.ProxyLealtad.RedimirPuntosRequestBody Body;
+        
+        public RedimirPuntosRequest() {
+        }
+        
+        public RedimirPuntosRequest(Milano.BackEnd.Business.ProxyLealtad.RedimirPuntosRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class RedimirPuntosRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string sCodigoBarras;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public decimal dMonto;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public int iCodigoTienda;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public int iCodigoempleado;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public int iCodigoCaja;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public int iTransaccion;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string sFolioVenta;
+        
+        public RedimirPuntosRequestBody() {
+        }
+        
+        public RedimirPuntosRequestBody(string sCodigoBarras, decimal dMonto, int iCodigoTienda, int iCodigoempleado, int iCodigoCaja, int iTransaccion, string sFolioVenta) {
+            this.sCodigoBarras = sCodigoBarras;
+            this.dMonto = dMonto;
+            this.iCodigoTienda = iCodigoTienda;
+            this.iCodigoempleado = iCodigoempleado;
+            this.iCodigoCaja = iCodigoCaja;
+            this.iTransaccion = iTransaccion;
+            this.sFolioVenta = sFolioVenta;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class RedimirPuntosResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="RedimirPuntosResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Milano.BackEnd.Business.ProxyLealtad.RedimirPuntosResponseBody Body;
+        
+        public RedimirPuntosResponse() {
+        }
+        
+        public RedimirPuntosResponse(Milano.BackEnd.Business.ProxyLealtad.RedimirPuntosResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class RedimirPuntosResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public Milano.BackEnd.Business.ProxyLealtad.RespuestaRedimirPuntos RedimirPuntosResult;
+        
+        public RedimirPuntosResponseBody() {
+        }
+        
+        public RedimirPuntosResponseBody(Milano.BackEnd.Business.ProxyLealtad.RespuestaRedimirPuntos RedimirPuntosResult) {
+            this.RedimirPuntosResult = RedimirPuntosResult;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -573,52 +1534,56 @@ namespace Milano.BackEnd.Business.ProxyLealtad {
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
     public partial class RegistrarClienteRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int iCodigoClienteSistemaCredito;
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string sToken;
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public int iCodigoEmpleado;
+        public int iCodigoClienteSistemaCredito;
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public int iCodigoEmpleado;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
         public int iCodigoClienteWeb;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
         public string sTelefono;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
         public string sPaterno;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
         public string sMaterno;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
         public string sNombre;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
         public string sGenero;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
         public string sFechaNacimiento;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
         public string sFolioVenta;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=10)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=11)]
         public int iCodigoTiendaRegistra;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=11)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=12)]
         public int iCodigoCajaRegistra;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=12)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=13)]
         public int iCodigoEmpleadoRegistra;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=13)]
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=14)]
         public string sEmail;
         
         public RegistrarClienteRequestBody() {
         }
         
-        public RegistrarClienteRequestBody(int iCodigoClienteSistemaCredito, int iCodigoEmpleado, int iCodigoClienteWeb, string sTelefono, string sPaterno, string sMaterno, string sNombre, string sGenero, string sFechaNacimiento, string sFolioVenta, int iCodigoTiendaRegistra, int iCodigoCajaRegistra, int iCodigoEmpleadoRegistra, string sEmail) {
+        public RegistrarClienteRequestBody(string sToken, int iCodigoClienteSistemaCredito, int iCodigoEmpleado, int iCodigoClienteWeb, string sTelefono, string sPaterno, string sMaterno, string sNombre, string sGenero, string sFechaNacimiento, string sFolioVenta, int iCodigoTiendaRegistra, int iCodigoCajaRegistra, int iCodigoEmpleadoRegistra, string sEmail) {
+            this.sToken = sToken;
             this.iCodigoClienteSistemaCredito = iCodigoClienteSistemaCredito;
             this.iCodigoEmpleado = iCodigoEmpleado;
             this.iCodigoClienteWeb = iCodigoClienteWeb;
@@ -729,10 +1694,13 @@ namespace Milano.BackEnd.Business.ProxyLealtad {
         [System.Runtime.Serialization.DataMemberAttribute(Order=11)]
         public double dImporteDescuento;
         
+        [System.Runtime.Serialization.DataMemberAttribute(Order=12)]
+        public int iCodigoTipoPuntos;
+        
         public AcumularPuntosODescuentosRequestBody() {
         }
         
-        public AcumularPuntosODescuentosRequestBody(string sFecha, int iCodigoCliente, int iCodigoTienda, int iCodigoCaja, int iCodigoEmpleado, string sFolioVenta, int iCodigoPromocion, double dVentaSinIVA, double dIVA, int iTransaccion, double dPuntosAcumulados, double dImporteDescuento) {
+        public AcumularPuntosODescuentosRequestBody(string sFecha, int iCodigoCliente, int iCodigoTienda, int iCodigoCaja, int iCodigoEmpleado, string sFolioVenta, int iCodigoPromocion, double dVentaSinIVA, double dIVA, int iTransaccion, double dPuntosAcumulados, double dImporteDescuento, int iCodigoTipoPuntos) {
             this.sFecha = sFecha;
             this.iCodigoCliente = iCodigoCliente;
             this.iCodigoTienda = iCodigoTienda;
@@ -745,6 +1713,7 @@ namespace Milano.BackEnd.Business.ProxyLealtad {
             this.iTransaccion = iTransaccion;
             this.dPuntosAcumulados = dPuntosAcumulados;
             this.dImporteDescuento = dImporteDescuento;
+            this.iCodigoTipoPuntos = iCodigoTipoPuntos;
         }
     }
     
@@ -898,6 +1867,346 @@ namespace Milano.BackEnd.Business.ProxyLealtad {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ObtenerTokenRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ObtenerToken", Namespace="http://tempuri.org/", Order=0)]
+        public Milano.BackEnd.Business.ProxyLealtad.ObtenerTokenRequestBody Body;
+        
+        public ObtenerTokenRequest() {
+        }
+        
+        public ObtenerTokenRequest(Milano.BackEnd.Business.ProxyLealtad.ObtenerTokenRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ObtenerTokenRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string usuario;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string password;
+        
+        public ObtenerTokenRequestBody() {
+        }
+        
+        public ObtenerTokenRequestBody(string usuario, string password) {
+            this.usuario = usuario;
+            this.password = password;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ObtenerTokenResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ObtenerTokenResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Milano.BackEnd.Business.ProxyLealtad.ObtenerTokenResponseBody Body;
+        
+        public ObtenerTokenResponse() {
+        }
+        
+        public ObtenerTokenResponse(Milano.BackEnd.Business.ProxyLealtad.ObtenerTokenResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class ObtenerTokenResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string ObtenerTokenResult;
+        
+        public ObtenerTokenResponseBody() {
+        }
+        
+        public ObtenerTokenResponseBody(string ObtenerTokenResult) {
+            this.ObtenerTokenResult = ObtenerTokenResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class EstablecerContraseñaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="EstablecerContraseña", Namespace="http://tempuri.org/", Order=0)]
+        public Milano.BackEnd.Business.ProxyLealtad.EstablecerContraseñaRequestBody Body;
+        
+        public EstablecerContraseñaRequest() {
+        }
+        
+        public EstablecerContraseñaRequest(Milano.BackEnd.Business.ProxyLealtad.EstablecerContraseñaRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class EstablecerContraseñaRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string sToken;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public int iCodigoCliente;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string sTelefono;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string sPaterno;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string sMaterno;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string sNombre;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string sFechaNacimiento;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string sPassword;
+        
+        public EstablecerContraseñaRequestBody() {
+        }
+        
+        public EstablecerContraseñaRequestBody(string sToken, int iCodigoCliente, string sTelefono, string sPaterno, string sMaterno, string sNombre, string sFechaNacimiento, string sPassword) {
+            this.sToken = sToken;
+            this.iCodigoCliente = iCodigoCliente;
+            this.sTelefono = sTelefono;
+            this.sPaterno = sPaterno;
+            this.sMaterno = sMaterno;
+            this.sNombre = sNombre;
+            this.sFechaNacimiento = sFechaNacimiento;
+            this.sPassword = sPassword;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class EstablecerContraseñaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="EstablecerContraseñaResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Milano.BackEnd.Business.ProxyLealtad.EstablecerContraseñaResponseBody Body;
+        
+        public EstablecerContraseñaResponse() {
+        }
+        
+        public EstablecerContraseñaResponse(Milano.BackEnd.Business.ProxyLealtad.EstablecerContraseñaResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class EstablecerContraseñaResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string EstablecerContraseñaResult;
+        
+        public EstablecerContraseñaResponseBody() {
+        }
+        
+        public EstablecerContraseñaResponseBody(string EstablecerContraseñaResult) {
+            this.EstablecerContraseñaResult = EstablecerContraseñaResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class IniciarSesionRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="IniciarSesion", Namespace="http://tempuri.org/", Order=0)]
+        public Milano.BackEnd.Business.ProxyLealtad.IniciarSesionRequestBody Body;
+        
+        public IniciarSesionRequest() {
+        }
+        
+        public IniciarSesionRequest(Milano.BackEnd.Business.ProxyLealtad.IniciarSesionRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class IniciarSesionRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string sToken;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public int iCodigoCliente;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public int iCodigoClienteCredito;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public int iCodigoClienteWeb;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public int iCodigoEmpleadoMilano;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
+        public string sTelefono;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        public string sCorreo;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+        public string sPassword;
+        
+        public IniciarSesionRequestBody() {
+        }
+        
+        public IniciarSesionRequestBody(string sToken, int iCodigoCliente, int iCodigoClienteCredito, int iCodigoClienteWeb, int iCodigoEmpleadoMilano, string sTelefono, string sCorreo, string sPassword) {
+            this.sToken = sToken;
+            this.iCodigoCliente = iCodigoCliente;
+            this.iCodigoClienteCredito = iCodigoClienteCredito;
+            this.iCodigoClienteWeb = iCodigoClienteWeb;
+            this.iCodigoEmpleadoMilano = iCodigoEmpleadoMilano;
+            this.sTelefono = sTelefono;
+            this.sCorreo = sCorreo;
+            this.sPassword = sPassword;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class IniciarSesionResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="IniciarSesionResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Milano.BackEnd.Business.ProxyLealtad.IniciarSesionResponseBody Body;
+        
+        public IniciarSesionResponse() {
+        }
+        
+        public IniciarSesionResponse(Milano.BackEnd.Business.ProxyLealtad.IniciarSesionResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class IniciarSesionResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public Milano.BackEnd.Business.ProxyLealtad.RespuestaIniciarSesion IniciarSesionResult;
+        
+        public IniciarSesionResponseBody() {
+        }
+        
+        public IniciarSesionResponseBody(Milano.BackEnd.Business.ProxyLealtad.RespuestaIniciarSesion IniciarSesionResult) {
+            this.IniciarSesionResult = IniciarSesionResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class EnviarSMSRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="EnviarSMS", Namespace="http://tempuri.org/", Order=0)]
+        public Milano.BackEnd.Business.ProxyLealtad.EnviarSMSRequestBody Body;
+        
+        public EnviarSMSRequest() {
+        }
+        
+        public EnviarSMSRequest(Milano.BackEnd.Business.ProxyLealtad.EnviarSMSRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class EnviarSMSRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string sToken;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string sTelefono;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string sMensaje;
+        
+        public EnviarSMSRequestBody() {
+        }
+        
+        public EnviarSMSRequestBody(string sToken, string sTelefono, string sMensaje) {
+            this.sToken = sToken;
+            this.sTelefono = sTelefono;
+            this.sMensaje = sMensaje;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class EnviarSMSResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="EnviarSMSResponse", Namespace="http://tempuri.org/", Order=0)]
+        public Milano.BackEnd.Business.ProxyLealtad.EnviarSMSResponseBody Body;
+        
+        public EnviarSMSResponse() {
+        }
+        
+        public EnviarSMSResponse(Milano.BackEnd.Business.ProxyLealtad.EnviarSMSResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class EnviarSMSResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string EnviarSMSResult;
+        
+        public EnviarSMSResponseBody() {
+        }
+        
+        public EnviarSMSResponseBody(string EnviarSMSResult) {
+            this.EnviarSMSResult = EnviarSMSResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface wsLealtadSoapChannel : Milano.BackEnd.Business.ProxyLealtad.wsLealtadSoap, System.ServiceModel.IClientChannel {
     }
@@ -926,13 +2235,63 @@ namespace Milano.BackEnd.Business.ProxyLealtad {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Milano.BackEnd.Business.ProxyLealtad.SucursalesCercanasResponse Milano.BackEnd.Business.ProxyLealtad.wsLealtadSoap.SucursalesCercanas(Milano.BackEnd.Business.ProxyLealtad.SucursalesCercanasRequest request) {
+            return base.Channel.SucursalesCercanas(request);
+        }
+        
+        public Milano.BackEnd.Business.ProxyLealtad.RespuestaSucursalesCercanas SucursalesCercanas(string sToken, decimal dLatitud, decimal dLongitud, int iMetrosMaximos) {
+            Milano.BackEnd.Business.ProxyLealtad.SucursalesCercanasRequest inValue = new Milano.BackEnd.Business.ProxyLealtad.SucursalesCercanasRequest();
+            inValue.Body = new Milano.BackEnd.Business.ProxyLealtad.SucursalesCercanasRequestBody();
+            inValue.Body.sToken = sToken;
+            inValue.Body.dLatitud = dLatitud;
+            inValue.Body.dLongitud = dLongitud;
+            inValue.Body.iMetrosMaximos = iMetrosMaximos;
+            Milano.BackEnd.Business.ProxyLealtad.SucursalesCercanasResponse retVal = ((Milano.BackEnd.Business.ProxyLealtad.wsLealtadSoap)(this)).SucursalesCercanas(inValue);
+            return retVal.Body.SucursalesCercanasResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Milano.BackEnd.Business.ProxyLealtad.ConsultarPuntosResponse Milano.BackEnd.Business.ProxyLealtad.wsLealtadSoap.ConsultarPuntos(Milano.BackEnd.Business.ProxyLealtad.ConsultarPuntosRequest request) {
+            return base.Channel.ConsultarPuntos(request);
+        }
+        
+        public Milano.BackEnd.Business.ProxyLealtad.RespuestaConsultarPuntos ConsultarPuntos(string sToken, int iCodigoCliente) {
+            Milano.BackEnd.Business.ProxyLealtad.ConsultarPuntosRequest inValue = new Milano.BackEnd.Business.ProxyLealtad.ConsultarPuntosRequest();
+            inValue.Body = new Milano.BackEnd.Business.ProxyLealtad.ConsultarPuntosRequestBody();
+            inValue.Body.sToken = sToken;
+            inValue.Body.iCodigoCliente = iCodigoCliente;
+            Milano.BackEnd.Business.ProxyLealtad.ConsultarPuntosResponse retVal = ((Milano.BackEnd.Business.ProxyLealtad.wsLealtadSoap)(this)).ConsultarPuntos(inValue);
+            return retVal.Body.ConsultarPuntosResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Milano.BackEnd.Business.ProxyLealtad.RedimirPuntosResponse Milano.BackEnd.Business.ProxyLealtad.wsLealtadSoap.RedimirPuntos(Milano.BackEnd.Business.ProxyLealtad.RedimirPuntosRequest request) {
+            return base.Channel.RedimirPuntos(request);
+        }
+        
+        public Milano.BackEnd.Business.ProxyLealtad.RespuestaRedimirPuntos RedimirPuntos(string sCodigoBarras, decimal dMonto, int iCodigoTienda, int iCodigoempleado, int iCodigoCaja, int iTransaccion, string sFolioVenta) {
+            Milano.BackEnd.Business.ProxyLealtad.RedimirPuntosRequest inValue = new Milano.BackEnd.Business.ProxyLealtad.RedimirPuntosRequest();
+            inValue.Body = new Milano.BackEnd.Business.ProxyLealtad.RedimirPuntosRequestBody();
+            inValue.Body.sCodigoBarras = sCodigoBarras;
+            inValue.Body.dMonto = dMonto;
+            inValue.Body.iCodigoTienda = iCodigoTienda;
+            inValue.Body.iCodigoempleado = iCodigoempleado;
+            inValue.Body.iCodigoCaja = iCodigoCaja;
+            inValue.Body.iTransaccion = iTransaccion;
+            inValue.Body.sFolioVenta = sFolioVenta;
+            Milano.BackEnd.Business.ProxyLealtad.RedimirPuntosResponse retVal = ((Milano.BackEnd.Business.ProxyLealtad.wsLealtadSoap)(this)).RedimirPuntos(inValue);
+            return retVal.Body.RedimirPuntosResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         Milano.BackEnd.Business.ProxyLealtad.RegistrarClienteResponse Milano.BackEnd.Business.ProxyLealtad.wsLealtadSoap.RegistrarCliente(Milano.BackEnd.Business.ProxyLealtad.RegistrarClienteRequest request) {
             return base.Channel.RegistrarCliente(request);
         }
         
-        public Milano.BackEnd.Business.ProxyLealtad.RespuestaRegistrarCliente RegistrarCliente(int iCodigoClienteSistemaCredito, int iCodigoEmpleado, int iCodigoClienteWeb, string sTelefono, string sPaterno, string sMaterno, string sNombre, string sGenero, string sFechaNacimiento, string sFolioVenta, int iCodigoTiendaRegistra, int iCodigoCajaRegistra, int iCodigoEmpleadoRegistra, string sEmail) {
+        public Milano.BackEnd.Business.ProxyLealtad.RespuestaRegistrarCliente RegistrarCliente(string sToken, int iCodigoClienteSistemaCredito, int iCodigoEmpleado, int iCodigoClienteWeb, string sTelefono, string sPaterno, string sMaterno, string sNombre, string sGenero, string sFechaNacimiento, string sFolioVenta, int iCodigoTiendaRegistra, int iCodigoCajaRegistra, int iCodigoEmpleadoRegistra, string sEmail) {
             Milano.BackEnd.Business.ProxyLealtad.RegistrarClienteRequest inValue = new Milano.BackEnd.Business.ProxyLealtad.RegistrarClienteRequest();
             inValue.Body = new Milano.BackEnd.Business.ProxyLealtad.RegistrarClienteRequestBody();
+            inValue.Body.sToken = sToken;
             inValue.Body.iCodigoClienteSistemaCredito = iCodigoClienteSistemaCredito;
             inValue.Body.iCodigoEmpleado = iCodigoEmpleado;
             inValue.Body.iCodigoClienteWeb = iCodigoClienteWeb;
@@ -956,7 +2315,7 @@ namespace Milano.BackEnd.Business.ProxyLealtad {
             return base.Channel.AcumularPuntosODescuentos(request);
         }
         
-        public Milano.BackEnd.Business.ProxyLealtad.RespuestaAcumularPuntosODescuentos AcumularPuntosODescuentos(string sFecha, int iCodigoCliente, int iCodigoTienda, int iCodigoCaja, int iCodigoEmpleado, string sFolioVenta, int iCodigoPromocion, double dVentaSinIVA, double dIVA, int iTransaccion, double dPuntosAcumulados, double dImporteDescuento) {
+        public Milano.BackEnd.Business.ProxyLealtad.RespuestaAcumularPuntosODescuentos AcumularPuntosODescuentos(string sFecha, int iCodigoCliente, int iCodigoTienda, int iCodigoCaja, int iCodigoEmpleado, string sFolioVenta, int iCodigoPromocion, double dVentaSinIVA, double dIVA, int iTransaccion, double dPuntosAcumulados, double dImporteDescuento, int iCodigoTipoPuntos) {
             Milano.BackEnd.Business.ProxyLealtad.AcumularPuntosODescuentosRequest inValue = new Milano.BackEnd.Business.ProxyLealtad.AcumularPuntosODescuentosRequest();
             inValue.Body = new Milano.BackEnd.Business.ProxyLealtad.AcumularPuntosODescuentosRequestBody();
             inValue.Body.sFecha = sFecha;
@@ -971,6 +2330,7 @@ namespace Milano.BackEnd.Business.ProxyLealtad {
             inValue.Body.iTransaccion = iTransaccion;
             inValue.Body.dPuntosAcumulados = dPuntosAcumulados;
             inValue.Body.dImporteDescuento = dImporteDescuento;
+            inValue.Body.iCodigoTipoPuntos = iCodigoTipoPuntos;
             Milano.BackEnd.Business.ProxyLealtad.AcumularPuntosODescuentosResponse retVal = ((Milano.BackEnd.Business.ProxyLealtad.wsLealtadSoap)(this)).AcumularPuntosODescuentos(inValue);
             return retVal.Body.AcumularPuntosODescuentosResult;
         }
@@ -998,6 +2358,75 @@ namespace Milano.BackEnd.Business.ProxyLealtad {
             inValue.Body.iCodigoCaja = iCodigoCaja;
             Milano.BackEnd.Business.ProxyLealtad.ConsultarClienteResponse retVal = ((Milano.BackEnd.Business.ProxyLealtad.wsLealtadSoap)(this)).ConsultarCliente(inValue);
             return retVal.Body.ConsultarClienteResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Milano.BackEnd.Business.ProxyLealtad.ObtenerTokenResponse Milano.BackEnd.Business.ProxyLealtad.wsLealtadSoap.ObtenerToken(Milano.BackEnd.Business.ProxyLealtad.ObtenerTokenRequest request) {
+            return base.Channel.ObtenerToken(request);
+        }
+        
+        public string ObtenerToken(string usuario, string password) {
+            Milano.BackEnd.Business.ProxyLealtad.ObtenerTokenRequest inValue = new Milano.BackEnd.Business.ProxyLealtad.ObtenerTokenRequest();
+            inValue.Body = new Milano.BackEnd.Business.ProxyLealtad.ObtenerTokenRequestBody();
+            inValue.Body.usuario = usuario;
+            inValue.Body.password = password;
+            Milano.BackEnd.Business.ProxyLealtad.ObtenerTokenResponse retVal = ((Milano.BackEnd.Business.ProxyLealtad.wsLealtadSoap)(this)).ObtenerToken(inValue);
+            return retVal.Body.ObtenerTokenResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Milano.BackEnd.Business.ProxyLealtad.EstablecerContraseñaResponse Milano.BackEnd.Business.ProxyLealtad.wsLealtadSoap.EstablecerContraseña(Milano.BackEnd.Business.ProxyLealtad.EstablecerContraseñaRequest request) {
+            return base.Channel.EstablecerContraseña(request);
+        }
+        
+        public string EstablecerContraseña(string sToken, int iCodigoCliente, string sTelefono, string sPaterno, string sMaterno, string sNombre, string sFechaNacimiento, string sPassword) {
+            Milano.BackEnd.Business.ProxyLealtad.EstablecerContraseñaRequest inValue = new Milano.BackEnd.Business.ProxyLealtad.EstablecerContraseñaRequest();
+            inValue.Body = new Milano.BackEnd.Business.ProxyLealtad.EstablecerContraseñaRequestBody();
+            inValue.Body.sToken = sToken;
+            inValue.Body.iCodigoCliente = iCodigoCliente;
+            inValue.Body.sTelefono = sTelefono;
+            inValue.Body.sPaterno = sPaterno;
+            inValue.Body.sMaterno = sMaterno;
+            inValue.Body.sNombre = sNombre;
+            inValue.Body.sFechaNacimiento = sFechaNacimiento;
+            inValue.Body.sPassword = sPassword;
+            Milano.BackEnd.Business.ProxyLealtad.EstablecerContraseñaResponse retVal = ((Milano.BackEnd.Business.ProxyLealtad.wsLealtadSoap)(this)).EstablecerContraseña(inValue);
+            return retVal.Body.EstablecerContraseñaResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Milano.BackEnd.Business.ProxyLealtad.IniciarSesionResponse Milano.BackEnd.Business.ProxyLealtad.wsLealtadSoap.IniciarSesion(Milano.BackEnd.Business.ProxyLealtad.IniciarSesionRequest request) {
+            return base.Channel.IniciarSesion(request);
+        }
+        
+        public Milano.BackEnd.Business.ProxyLealtad.RespuestaIniciarSesion IniciarSesion(string sToken, int iCodigoCliente, int iCodigoClienteCredito, int iCodigoClienteWeb, int iCodigoEmpleadoMilano, string sTelefono, string sCorreo, string sPassword) {
+            Milano.BackEnd.Business.ProxyLealtad.IniciarSesionRequest inValue = new Milano.BackEnd.Business.ProxyLealtad.IniciarSesionRequest();
+            inValue.Body = new Milano.BackEnd.Business.ProxyLealtad.IniciarSesionRequestBody();
+            inValue.Body.sToken = sToken;
+            inValue.Body.iCodigoCliente = iCodigoCliente;
+            inValue.Body.iCodigoClienteCredito = iCodigoClienteCredito;
+            inValue.Body.iCodigoClienteWeb = iCodigoClienteWeb;
+            inValue.Body.iCodigoEmpleadoMilano = iCodigoEmpleadoMilano;
+            inValue.Body.sTelefono = sTelefono;
+            inValue.Body.sCorreo = sCorreo;
+            inValue.Body.sPassword = sPassword;
+            Milano.BackEnd.Business.ProxyLealtad.IniciarSesionResponse retVal = ((Milano.BackEnd.Business.ProxyLealtad.wsLealtadSoap)(this)).IniciarSesion(inValue);
+            return retVal.Body.IniciarSesionResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Milano.BackEnd.Business.ProxyLealtad.EnviarSMSResponse Milano.BackEnd.Business.ProxyLealtad.wsLealtadSoap.EnviarSMS(Milano.BackEnd.Business.ProxyLealtad.EnviarSMSRequest request) {
+            return base.Channel.EnviarSMS(request);
+        }
+        
+        public string EnviarSMS(string sToken, string sTelefono, string sMensaje) {
+            Milano.BackEnd.Business.ProxyLealtad.EnviarSMSRequest inValue = new Milano.BackEnd.Business.ProxyLealtad.EnviarSMSRequest();
+            inValue.Body = new Milano.BackEnd.Business.ProxyLealtad.EnviarSMSRequestBody();
+            inValue.Body.sToken = sToken;
+            inValue.Body.sTelefono = sTelefono;
+            inValue.Body.sMensaje = sMensaje;
+            Milano.BackEnd.Business.ProxyLealtad.EnviarSMSResponse retVal = ((Milano.BackEnd.Business.ProxyLealtad.wsLealtadSoap)(this)).EnviarSMS(inValue);
+            return retVal.Body.EnviarSMSResult;
         }
     }
 }

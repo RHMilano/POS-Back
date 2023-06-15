@@ -8,7 +8,7 @@ using System.Xml.Linq;
 namespace Milano.BackEnd.Dto.Lealtad
 {
     /// <summary>
-    /// Clase DTO para envio de parametros AcumularPuntosDescuentosRequest
+    /// Clase DTO para envio de parametros AcumularPuntosDescuentosRequest, del programa de lealtad
     /// </summary>
     [DataContract]
     public class AcumularPuntosDescuentosRequest
@@ -85,6 +85,14 @@ namespace Milano.BackEnd.Dto.Lealtad
         /// </summary>
         [DataMember(Name = "dImporteDescuento")]
         public double ddImporteDescuento { get; set; }
+
+        /// <summary>
+        ///  Tipo de puntos acumulados en base a las reglas de lealtad
+        /// </summary>
+        [DataMember(Name = "iCodigoTipoPuntos")]
+        public int iiCodigoTipoPuntos { get; set; }
+
+
 
     }
 }

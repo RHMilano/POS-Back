@@ -52,7 +52,7 @@ namespace Milano.BackEnd.Business.Finlag
             proxy.Endpoint.Address = new System.ServiceModel.EndpointAddress(infoService.UrlService);
 
             //Configuracion para la seccion de lealtad
-            infoService = externosRepository.ObtenerInfoServicioExterno(27);
+            infoService = externosRepository.ObtenerInfoServicioExterno(28);
             proxyLealtad = new wsLealtadSoapClient();
             proxyLealtad.Endpoint.Address = new System.ServiceModel.EndpointAddress(infoService.UrlService);
             //--
@@ -466,9 +466,13 @@ namespace Milano.BackEnd.Business.Finlag
             RegistroLealtadResponse registroLealtadResponse = new RegistroLealtadResponse();
 
             registroLealtadRequest.ssFechaNacimiento = registroLealtadRequest.ssFechaNacimiento.Replace("-", "");
-            //registroLealtadRequest.ssGenero = "";
+
+            // Este token corresponde al registrado en SP_CRM_RegistraCliente para validación y  uso interno
+            registroLealtadRequest.ssToken = "935A219A-4AEA-4C14-B4A1-A103090A8315";
+
 
             ProxyLealtad.RespuestaRegistrarCliente xxx = proxyLealtad.RegistrarCliente(
+                registroLealtadRequest.ssToken,
                 registroLealtadRequest.iiCodigoClienteSistemaCredito,
                 registroLealtadRequest.iiCodigoEmpleado,
                 registroLealtadRequest.iiCodigoClienteWeb,
@@ -518,13 +522,43 @@ namespace Milano.BackEnd.Business.Finlag
                 acumularPuntosDescuentosRequest.ddIVA,
                 acumularPuntosDescuentosRequest.iiTransaccion,
                 acumularPuntosDescuentosRequest.ddPuntosAcumulados,
-                acumularPuntosDescuentosRequest.ddImporteDescuento
+                acumularPuntosDescuentosRequest.ddImporteDescuento,
+                acumularPuntosDescuentosRequest.iiCodigoTipoPuntos
            );
 
             acumularPuntosDescuentosResponse.ssMensaje = xxx.sMensaje;
             acumularPuntosDescuentosResponse.bbError = xxx.bError;
 
             return acumularPuntosDescuentosResponse;
+
+        }
+
+
+
+        /// <summary>
+        /// Consume el ws para realizar una redencion de puntos de lealtad
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        public RedencionPuntosLealtadResponse RedimirPuntosLealtad(RedencionPuntosLealtadRequest request)
+        {
+            RedencionPuntosLealtadResponse response = new RedencionPuntosLealtadResponse();
+
+            ProxyLealtad.RespuestaRedimirPuntos service = proxyLealtad.RedimirPuntos(
+                request.ssCodigoBarras,
+                request.ddMonto,
+                request.iiCodigoTienda,
+                request.iiCodigoEmpleado,
+                request.iiCodigoCaja,
+                request.iiTransaccion,
+               request.ssFolioVenta
+           );
+
+            response.ssMensaje = service.sMensaje;
+            response.bbError = service.bError;
+            response.ssSesion = service.sSesion;
+
+            return response;
 
         }
 

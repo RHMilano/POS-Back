@@ -235,6 +235,8 @@
     <Compile Include="Sales\CuponPersistirResponse.cs" />
     <Compile Include="Sales\CuponRedimirRequest.cs" />
     <Compile Include="Sales\CuponRedimirResponse.cs" />
+    <Compile Include="Sales\RedencionPuntosLealtadRequest.cs" />
+    <Compile Include="Sales\RedencionPuntosLealtadResponse.cs" />
     <Compile Include="Sales\SolicitudAutorizacionDescuentoResponse.cs" />
     <Compile Include="Sales\SolicitudAutorizacionDescuentoRequest.cs" />
     <Compile Include="Sales\InformacionAsociadaDevolucion.cs" />

@@ -1085,6 +1085,8 @@ namespace Milano.BackEnd.Repository
                 parametersOut.Add(new System.Data.SqlClient.SqlParameter() { ParameterName = "@CodigoResultado", Direction = ParameterDirection.Output, SqlDbType = SqlDbType.Int });
                 parametersOut.Add(new System.Data.SqlClient.SqlParameter() { ParameterName = "@MensajeResultado", Direction = ParameterDirection.Output, SqlDbType = SqlDbType.NVarChar, Size = 4000 });
 
+
+
                 var result = data.ExecuteProcedure("[dbo].[sp_vanti_FinalizarTransaccionVenta]", parameters, parametersOut);
 
                 // Llenar información referente a retiro de efectivo
@@ -1096,9 +1098,29 @@ namespace Milano.BackEnd.Repository
                 informacionAsociadaRetiroEfectivo.PermitirIgnorarAlertaRetiroEfectivo = Convert.ToBoolean(result["@PermitirIgnorar"]);
                 operationResponse.informacionAsociadaRetiroEfectivo = informacionAsociadaRetiroEfectivo;
 
+                // Se actualiza el valor del campo autorizasion de las tablas venIngresosDeCajaReg y trxValoresDet
+                // Si sen un pago con redencion de puntos se regresa valor en la sesion
+
+                //foreach (var item in finalizarVentaRequest.FormasPagoUtilizadas)
+                //{
+                //    // if(item.)
+                //    // if (!string.IsNullOrEmpty(finalizarVentaRequest.cabeceraVentaRequest.SesionPuntosLealtadRedimidos))
+                //    _ = item;
+                //        //var paramTrx = new Dictionary<string, object>();
+
+                //        //paramTrx.Add("@FolioVenta", finalizarVentaRequest.cabeceraVentaRequest.FolioOperacion);
+                //        //paramTrx.Add("@Sesion", finalizarVentaRequest.cabeceraVentaRequest.SesionPuntosLealtadRedimidos);
+                //        //data.ExecuteProcedure("sp_ActualizaSesionPuntosRedimidosLealtad", paramTrx);
+
+                   
+                //}
+
+                     
+
                 // Llenar información referente a estatus de la operación
                 operationResponse.CodeNumber = result["@CodigoResultado"].ToString();
                 operationResponse.CodeDescription = result["@MensajeResultado"].ToString();
+
 
             }
             return operationResponse;
@@ -1326,6 +1348,24 @@ namespace Milano.BackEnd.Repository
             }
             return ventaResponse;
         }
+
+
+
+        public int ObtenerTrxPorFolio( string folio)
+        {
+            var parameters = new Dictionary<string, object>();
+            parameters.Add("@FolioVenta", folio);
+            int trx = 0;
+
+            foreach (var item in data.GetDataReader("[dbo].[sp_vanti_BuscarTrxPorFolio]", parameters))
+            {
+
+                trx = Convert.ToInt32(item.GetValue(0));
+             
+            }
+            return trx;
+        }
+
 
         private VentaResponse ObtenerVentaDetPorFolio(VentaResponse ventaResponse, string folio, int esDevolucion)
         {
