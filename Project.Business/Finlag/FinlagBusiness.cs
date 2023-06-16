@@ -465,7 +465,7 @@ namespace Milano.BackEnd.Business.Finlag
         {
             RegistroLealtadResponse registroLealtadResponse = new RegistroLealtadResponse();
 
-            registroLealtadRequest.ssFechaNacimiento = registroLealtadRequest.ssFechaNacimiento.Replace("-", "");
+            //registroLealtadRequest.ssFechaNacimiento = registroLealtadRequest.ssFechaNacimiento.Replace("-", "");
 
             // Este token corresponde al registrado en SP_CRM_RegistraCliente para validación y  uso interno
             registroLealtadRequest.ssToken = "935A219A-4AEA-4C14-B4A1-A103090A8315";
@@ -581,7 +581,7 @@ namespace Milano.BackEnd.Business.Finlag
         {
             ConsultaClienteLealtadResponse consultaClienteResponse = new ConsultaClienteLealtadResponse();
             List<rInfoClientesCRM> listrenglon = new List<rInfoClientesCRM>();
-
+            
             ProxyLealtad.RespuestaConsultarCliente info = proxyLealtad.ConsultarCliente(
                 consultaClienteLealtadRequest.iiCodigoCliente,
                 consultaClienteLealtadRequest.iiCodigoClienteSistemaCredito,
@@ -601,7 +601,7 @@ namespace Milano.BackEnd.Business.Finlag
             consultaClienteResponse.iiCantidadClientes = info.iCantidadClientes;
             consultaClienteResponse.ssMensajeError = info.sMensajeError;
 
-            if (info.infoClientesCRMs != null)
+            if (info.infoClientesCRMs != null && info.infoClientesCRMs.Length > 0 && string.IsNullOrEmpty(info.sMensajeError))
             {
                 foreach (var r in info.infoClientesCRMs)
                 {
