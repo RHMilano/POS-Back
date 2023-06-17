@@ -186,11 +186,14 @@ namespace Milano.BackEnd.Repository
                 descuentoPromocional.FolioOperacion = Convert.ToString(item.GetValue(5));
                 descuentoPromocional.Status = Convert.ToString(item.GetValue(6));
                 descuentoPromocional.FechaCancelacion = Convert.ToDateTime(item.GetValue(7));
+
                 descuentoPromocional.ImporteDescuento = inspector.TruncarValor(Convert.ToDecimal(item.GetValue(8)));
+                
                 descuentoPromocional.Saldo = inspector.TruncarValor(Convert.ToDecimal(item.GetValue(9)));
 
                 if (codigoClienteLealtad != 0)
                 {
+                    descuentoPromocional.TipoAcumulacion = Convert.ToString(item.GetValue(13));
                     descuentoPromocional.MercanciaSinIva = Convert.ToDouble(item.GetValue(10));
                     descuentoPromocional.Iva = Convert.ToDouble(item.GetValue(11));
                     descuentoPromocional.MensajeCupon = Convert.ToString(item.GetValue(12));

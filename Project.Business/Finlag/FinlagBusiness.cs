@@ -501,6 +501,8 @@ namespace Milano.BackEnd.Business.Finlag
 
 
 
+
+
         /// <summary>
         /// 
         /// </summary>
@@ -528,6 +530,11 @@ namespace Milano.BackEnd.Business.Finlag
 
             acumularPuntosDescuentosResponse.ssMensaje = xxx.sMensaje;
             acumularPuntosDescuentosResponse.bbError = xxx.bError;
+            
+            if (xxx.bError)
+            {
+                throw new Exception(xxx.sMensaje );
+            }
 
             return acumularPuntosDescuentosResponse;
 

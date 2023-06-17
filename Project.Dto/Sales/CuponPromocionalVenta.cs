@@ -80,6 +80,12 @@ namespace Milano.BackEnd.Dto.Sales
         public string MensajeCupon { get; set; }
 
         /// <summary>
+        /// Tipo de acumulación
+        /// </summary>
+        [DataMember(Name = "tipoAcumulacion")]
+        public string TipoAcumulacion { get; set; }
+
+        /// <summary>
         /// Mercancia sin IVA lealtad
         /// </summary>
         [DataMember(Name = "mercanciaSinIva")]
