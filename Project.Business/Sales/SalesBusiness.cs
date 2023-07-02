@@ -298,11 +298,6 @@ namespace Milano.BackEnd.Business
             RedencionPuntosLealtadResponse response = new RedencionPuntosLealtadResponse();
             FinlagBusiness v = new FinlagBusiness(token);
 
-
-
-
-
-
             // Agregar descuentos promocionales existentes en motor de promociones                                    
 
             request.ssCodigoBarras = redencionPuntosLealtadRequest.ssCodigoBarras;

@@ -583,7 +583,6 @@ namespace Milano.BackEnd.Business.Finlag
             });
         }
 
-
         private ConsultaClienteLealtadResponse ConsultaClienteLealtadInternal(ConsultaClienteLealtadRequest consultaClienteLealtadRequest)
         {
             ConsultaClienteLealtadResponse consultaClienteResponse = new ConsultaClienteLealtadResponse();

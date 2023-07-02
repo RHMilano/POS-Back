@@ -104,7 +104,11 @@ namespace Milano.BackEnd.Repository
             {
                 parameters.Add("@tipoCliente", nivel);
                 parameters.Add("@primeraCompra", primeraCompra == true ? 1 : 0);
-                spEjecutar = "sp_prmChecarPromocionesPuntosLealtad";
+
+
+                spEjecutar = "sp_prmChecarPromocionesLealtad";
+                //spEjecutar = "sp_prmChecarPromocionesPuntosLealtad";
+
             }
 
             List<DescuentoPromocionalVenta> lista = new List<DescuentoPromocionalVenta>();
